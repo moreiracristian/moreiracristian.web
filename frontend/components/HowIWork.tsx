@@ -11,48 +11,38 @@ export default function HowIWork() {
   const h = tr.howIWork;
 
   return (
-    <section id="como-trabajo" className="py-24 px-6" style={{ background: "var(--bg-surface)" }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span
-            className="text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6 inline-block"
-            style={{ border: "1px solid var(--border)", color: "var(--accent-cyan)", background: "var(--accent-cyan-dim)" }}
-          >
+    <section id="como-trabajo" style={{ background: "var(--bg-surface)", width: "100%", padding: "6rem 0" }}>
+      <div className="section-inner">
+        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid var(--border)", color: "var(--accent-cyan)", background: "var(--accent-cyan-dim)" }}>
             {h.tag}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+          <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: "1rem", color: "var(--text-primary)" }}>
             {h.title}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
+          <p style={{ fontSize: "1rem", color: "var(--text-muted)", lineHeight: 1.7 }}>
             {h.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "4rem", alignItems: "start" }}>
           {/* Steps */}
-          <div className="flex flex-col gap-8">
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             {h.steps.map((step, i) => (
-              <div key={step.num} className="flex gap-5">
-                <div className="flex-shrink-0 flex flex-col items-center">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                    style={{
-                      background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
-                      color: "white",
-                    }}
-                  >
+              <div key={step.num} style={{ display: "flex", gap: "1.25rem" }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+                  <div style={{ width: "2.5rem", height: "2.5rem", borderRadius: "9999px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.875rem", color: "white", background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))", flexShrink: 0 }}>
                     {step.num}
                   </div>
                   {i < h.steps.length - 1 && (
-                    <div className="w-px flex-1 mt-2" style={{ background: "var(--border)", minHeight: "32px" }} />
+                    <div style={{ width: "1px", flex: 1, marginTop: "0.5rem", minHeight: "2rem", background: "var(--border)" }} />
                   )}
                 </div>
-                <div className="pb-2">
-                  <h3 className="text-base font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
+                <div style={{ paddingBottom: "0.5rem" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem", color: "var(--text-primary)" }}>
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-muted)" }}>
                     {step.desc}
                   </p>
                 </div>
@@ -61,43 +51,26 @@ export default function HowIWork() {
           </div>
 
           {/* Values */}
-          <div className="grid grid-cols-2 gap-4">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
             {h.values.map((v) => {
               const Icon = iconMap[v.icon as IconKey];
               return (
-                <div
-                  key={v.label}
-                  className="p-6 rounded-2xl flex flex-col items-center text-center gap-3"
-                  style={{
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))" }}
-                  >
+                <div key={v.label} style={{ padding: "1.5rem", borderRadius: "1rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "0.75rem", background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                  <div style={{ width: "3rem", height: "3rem", borderRadius: "9999px", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))" }}>
                     {Icon && <Icon size={22} style={{ color: "var(--accent-cyan)" }} />}
                   </div>
-                  <span className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>
+                  <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "var(--text-primary)" }}>
                     {v.label}
                   </span>
                 </div>
               );
             })}
 
-            {/* Quote card */}
-            <div
-              className="col-span-2 p-6 rounded-2xl"
-              style={{
-                background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))",
-                border: "1px solid var(--border)",
-              }}
-            >
-              <p className="text-sm italic leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                &ldquo;No entrego un informe y desaparezco. Soy tu respaldo continuo para entender lo que pasa en tu negocio.&rdquo;
+            <div style={{ gridColumn: "span 2", padding: "1.5rem", borderRadius: "1rem", background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))", border: "1px solid var(--border)" }}>
+              <p style={{ fontSize: "0.875rem", fontStyle: "italic", lineHeight: 1.7, color: "var(--text-muted)" }}>
+                &ldquo;No entregamos un informe y desaparecemos. Somos el respaldo continuo para que entiendas lo que pasa en tu negocio y puedas actuar sobre eso.&rdquo;
               </p>
-              <p className="text-xs mt-3 font-semibold" style={{ color: "var(--accent-cyan)" }}>
+              <p style={{ fontSize: "0.75rem", marginTop: "0.75rem", fontWeight: 600, color: "var(--accent-cyan)" }}>
                 — Cristian Moreira
               </p>
             </div>

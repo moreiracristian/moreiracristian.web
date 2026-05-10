@@ -12,7 +12,7 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -26,22 +26,44 @@ export default function Newsletter() {
 
   return (
     <section
-      className="py-20 px-6 relative overflow-hidden"
-      style={{ background: "var(--bg-surface)" }}
+      style={{
+        background: "var(--bg-surface)",
+        width: "100%",
+        padding: "6rem 0",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
       {/* Glow */}
       <div
-        className="absolute inset-0 pointer-events-none"
         style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
           background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative z-10 max-w-2xl mx-auto text-center">
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          maxWidth: "56rem",
+          margin: "0 auto",
+          textAlign: "center",
+          padding: "0 1.5rem",
+        }}
+      >
         {/* Icon */}
         <div
-          className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
           style={{
+            width: "3.5rem",
+            height: "3.5rem",
+            borderRadius: "0.75rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "0 auto 1.5rem",
             background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))",
             border: "1px solid var(--border)",
           }}
@@ -49,36 +71,86 @@ export default function Newsletter() {
           <Mail size={24} style={{ color: "var(--accent-cyan)" }} />
         </div>
 
+        {/* Tag */}
         <span
-          className="text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6 inline-block"
-          style={{ border: "1px solid var(--border)", color: "var(--accent-cyan)", background: "var(--accent-cyan-dim)" }}
+          style={{
+            display: "inline-block",
+            fontSize: "0.7rem",
+            fontWeight: 700,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            padding: "0.4rem 1rem",
+            borderRadius: "9999px",
+            marginBottom: "1.25rem",
+            border: "1px solid var(--border)",
+            color: "var(--accent-cyan)",
+            background: "var(--accent-cyan-dim)",
+          }}
         >
           {n.tag}
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold mt-4 mb-3" style={{ color: "var(--text-primary)" }}>
+
+        {/* Title */}
+        <h2
+          style={{
+            fontSize: "clamp(1.5rem, 3vw, 2rem)",
+            fontWeight: 700,
+            marginBottom: "0.75rem",
+            color: "var(--text-primary)",
+          }}
+        >
           {n.title}
         </h2>
-        <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
+
+        {/* Subtitle */}
+        <p
+          style={{
+            fontSize: "0.9rem",
+            marginBottom: "2rem",
+            color: "var(--text-muted)",
+            lineHeight: 1.7,
+          }}
+        >
           {n.subtitle}
         </p>
 
+        {/* Form or success */}
         {status === "success" ? (
           <div
-            className="flex items-center justify-center gap-2 p-4 rounded-xl text-sm"
-            style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", color: "#4ade80" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem",
+              padding: "1rem",
+              borderRadius: "0.75rem",
+              fontSize: "0.875rem",
+              background: "rgba(34,197,94,0.1)",
+              border: "1px solid rgba(34,197,94,0.3)",
+              color: "#4ade80",
+            }}
           >
             <CheckCircle size={18} /> {n.success}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.75rem",
+              maxWidth: "28rem",
+              margin: "0 auto",
+            }}
+          >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={n.placeholder}
               required
-              className="flex-1"
               style={{
+                flex: "1 1 10rem",
                 background: "var(--bg-card)",
                 border: "1px solid var(--border)",
                 borderRadius: "10px",
@@ -86,6 +158,7 @@ export default function Newsletter() {
                 color: "var(--text-primary)",
                 fontSize: "14px",
                 outline: "none",
+                minWidth: 0,
               }}
               onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
               onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
@@ -93,12 +166,17 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="font-semibold px-6 py-3 rounded-xl transition-all whitespace-nowrap"
               style={{
+                fontWeight: 600,
+                padding: "12px 24px",
+                borderRadius: "10px",
+                border: "none",
                 background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
                 color: "white",
                 cursor: status === "loading" ? "not-allowed" : "pointer",
                 opacity: status === "loading" ? 0.7 : 1,
+                whiteSpace: "nowrap",
+                fontSize: "0.9rem",
               }}
             >
               {status === "loading" ? n.subscribing : n.cta}
@@ -106,16 +184,25 @@ export default function Newsletter() {
           </form>
         )}
 
+        {/* Error */}
         {status === "error" && (
           <div
-            className="flex items-center justify-center gap-2 mt-3 text-sm"
-            style={{ color: "#f87171" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem",
+              marginTop: "0.75rem",
+              fontSize: "0.875rem",
+              color: "#f87171",
+            }}
           >
             <AlertCircle size={14} /> {n.error}
           </div>
         )}
 
-        <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>
+        {/* Privacy */}
+        <p style={{ fontSize: "0.75rem", marginTop: "1rem", color: "var(--text-muted)" }}>
           {n.privacy}
         </p>
       </div>

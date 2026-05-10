@@ -4,7 +4,7 @@ export const t = {
   es: {
     nav: {
       services: "Servicios",
-      howIWork: "Cómo trabajo",
+      howIWork: "Cómo trabajamos",
       projects: "Proyectos",
       about: "Sobre mí",
       contact: "Contacto",
@@ -13,8 +13,8 @@ export const t = {
     hero: {
       badge: "Analista de Datos · Business Intelligence",
       headline1: "Tus datos ya existen.",
-      headline2: "Solo necesitás que alguien los lea.",
-      sub: "Acompaño a PyMEs a tomar decisiones más inteligentes con los datos que ya tienen — sin jerga técnica, con resultados reales.",
+      headline2: "Lo que falta es convertirlos en información.",
+      sub: "Cada venta, cada compra, cada movimiento de tu negocio deja un rastro. Nosotros lo leemos y te entregamos información clara para que vos tomes las decisiones.",
       cta1: "Hablemos de tu negocio",
       cta2: "Ver servicios",
       stat1: { value: "12+", label: "años en retail y consumo masivo" },
@@ -23,9 +23,9 @@ export const t = {
     },
     problem: {
       tag: "El diagnóstico",
-      title: "¿Cuánto te cuesta no mirar tus datos?",
+      title: "Datos tenés. Información es lo que falta.",
       subtitle:
-        "La mayoría de las PyMEs tienen información valiosa guardada en planillas, sistemas y tickets. El problema no es la falta de datos — es no saber qué hacer con ellos.",
+        "Fechas, números, ventas, movimientos — todo está guardado en algún lado. El problema no es la cantidad: es que sin el análisis correcto, los datos no dicen nada. La información sí.",
       cards: [
         {
           icon: "TrendingDown",
@@ -50,10 +50,10 @@ export const t = {
       ],
     },
     services: {
-      tag: "Lo que hago",
-      title: "Servicios en lenguaje de negocio",
+      tag: "Lo que hacemos",
+      title: "De datos a información accionable",
       subtitle:
-        "No te vendo tecnología. Te ofrezco claridad sobre tu negocio usando los datos que ya tenés.",
+        "Leemos lo que ya registrás y te entregamos información concreta: qué está pasando y por qué. La decisión es tuya.",
       items: [
         {
           icon: "DollarSign",
@@ -94,30 +94,30 @@ export const t = {
       ],
     },
     howIWork: {
-      tag: "Mi forma de trabajar",
-      title: "Un analista de datos de tu lado, no del otro lado del mostrador",
+      tag: "Nuestra forma de trabajar",
+      title: "Tus datos hablan. Nosotros los interpretamos.",
       subtitle:
         "No somos una agencia. Somos un equipo comprometido con el crecimiento de tu negocio.",
       steps: [
         {
           num: "01",
-          title: "Escucho antes de analizar",
-          desc: "Primero entiendo tu negocio, tus decisiones y tus dolores. Los datos vienen después.",
+          title: "Escuchamos antes de analizar",
+          desc: "Primero entendemos tu negocio, tus decisiones y tus dolores. Los datos vienen después.",
         },
         {
           num: "02",
-          title: "Trabajo con lo que tenés",
+          title: "Trabajamos con lo que tenés",
           desc: "No necesitás sistemas caros ni grandes cambios. Empezamos con tus planillas, tu sistema y tus datos actuales.",
         },
         {
           num: "03",
-          title: "Te explico sin jerga",
+          title: "Explicamos sin jerga",
           desc: "Cada análisis viene con una conclusión clara: qué significa, qué podés hacer y qué impacto tiene.",
         },
         {
           num: "04",
-          title: "Estoy disponible cuando me necesitás",
-          desc: "No entrego un informe y desaparezco. Soy tu respaldo continuo para interpretar lo que pasa en tu negocio.",
+          title: "Estamos disponibles cuando nos necesitás",
+          desc: "No entregamos un informe y desaparecemos. Somos tu respaldo continuo para interpretar lo que pasa en tu negocio.",
         },
       ],
       values: [
@@ -202,7 +202,7 @@ export const t = {
         message: "¿Cuál es tu mayor desafío con los datos de tu negocio?",
         send: "Enviar mensaje",
         sending: "Enviando...",
-        success: "¡Mensaje recibido! Te respondo en menos de 24 horas.",
+        success: "¡Mensaje recibido! Te respondemos en menos de 24 horas.",
         error: "Algo salió mal. Escribime directo a moreiracristianmiguel@gmail.com",
       },
       direct: {
@@ -229,17 +229,17 @@ export const t = {
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Servicios",
-        howIWork: "Cómo trabajo",
+        howIWork: "Cómo trabajamos",
         projects: "Proyectos",
         contact: "Contacto",
       },
-      copy: "Cristian Miguel Moreira. Todos los derechos reservados.",
+      copy: "Cristian Moreira. Todos los derechos reservados.",
     },
   },
   en: {
     nav: {
       services: "Services",
-      howIWork: "How I work",
+      howIWork: "How we work",
       projects: "Projects",
       about: "About",
       contact: "Contact",
@@ -248,8 +248,8 @@ export const t = {
     hero: {
       badge: "Data Analyst · Business Intelligence",
       headline1: "Your data already exists.",
-      headline2: "You just need someone to read it.",
-      sub: "I help SMEs make smarter decisions with the data they already have — no technical jargon, real results.",
+      headline2: "What's missing is turning it into information.",
+      sub: "Every sale, every purchase, every move your business makes leaves a trace. We read that trace and tell you what to do with it.",
       cta1: "Let's talk about your business",
       cta2: "See services",
       stat1: { value: "12+", label: "years in retail & consumer goods" },
@@ -258,9 +258,9 @@ export const t = {
     },
     problem: {
       tag: "The diagnosis",
-      title: "How much is ignoring your data costing you?",
+      title: "You have data. What you're missing is information.",
       subtitle:
-        "Most SMEs have valuable information stored in spreadsheets, systems, and tickets. The problem isn't a lack of data — it's not knowing what to do with it.",
+        "Dates, numbers, sales, transactions — it's all stored somewhere. The problem isn't the volume: it's that without proper analysis, data says nothing. Information does.",
       cards: [
         {
           icon: "TrendingDown",
@@ -285,10 +285,10 @@ export const t = {
       ],
     },
     services: {
-      tag: "What I do",
-      title: "Services in business language",
+      tag: "What we do",
+      title: "From data to actionable information",
       subtitle:
-        "I don't sell technology. I offer clarity about your business using the data you already have.",
+        "We read what you already record and deliver concrete information: what's happening and why. The decision is yours.",
       items: [
         {
           icon: "DollarSign",
@@ -329,29 +329,29 @@ export const t = {
       ],
     },
     howIWork: {
-      tag: "How I work",
-      title: "A data analyst on your side, not on the other side of the counter",
+      tag: "How we work",
+      title: "Your data speaks. We interpret it.",
       subtitle: "We're not an agency. We're a team committed to your business growth.",
       steps: [
         {
           num: "01",
-          title: "I listen before I analyze",
-          desc: "First I understand your business, your decisions, and your pain points. The data comes after.",
+          title: "We listen before we analyze",
+          desc: "First we understand your business, your decisions, and your pain points. The data comes after.",
         },
         {
           num: "02",
-          title: "I work with what you have",
+          title: "We work with what you have",
           desc: "You don't need expensive systems or big changes. We start with your spreadsheets, your system, and your current data.",
         },
         {
           num: "03",
-          title: "I explain without jargon",
+          title: "We explain without jargon",
           desc: "Every analysis comes with a clear conclusion: what it means, what you can do, and what the impact is.",
         },
         {
           num: "04",
-          title: "I'm available when you need me",
-          desc: "I don't deliver a report and disappear. I'm your ongoing support for interpreting what's happening in your business.",
+          title: "We're available when you need us",
+          desc: "We don't deliver a report and disappear. We're your ongoing support for interpreting what's happening in your business.",
         },
       ],
       values: [
@@ -435,7 +435,7 @@ export const t = {
         message: "What's your biggest challenge with your business data?",
         send: "Send message",
         sending: "Sending...",
-        success: "Message received! I'll reply within 24 hours.",
+        success: "Message received! We'll reply within 24 hours.",
         error: "Something went wrong. Email me directly at moreiracristianmiguel@gmail.com",
       },
       direct: {
@@ -462,11 +462,11 @@ export const t = {
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Services",
-        howIWork: "How I work",
+        howIWork: "How we work",
         projects: "Projects",
         contact: "Contact",
       },
-      copy: "Cristian Miguel Moreira. All rights reserved.",
+      copy: "Cristian Moreira. All rights reserved.",
     },
   },
 };

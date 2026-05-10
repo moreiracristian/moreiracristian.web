@@ -10,24 +10,61 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 grid-pattern overflow-hidden"
+      className="grid-pattern"
+      style={{
+        width: "100%",
+        position: "relative",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "0 1.5rem",
+        overflow: "hidden",
+      }}
     >
       {/* Ambient glow blobs */}
       <div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none"
-        style={{ background: "var(--accent-blue)" }}
+        style={{
+          position: "absolute",
+          top: "25%",
+          left: "25%",
+          width: "24rem",
+          height: "24rem",
+          borderRadius: "9999px",
+          filter: "blur(64px)",
+          opacity: 0.2,
+          pointerEvents: "none",
+          background: "var(--accent-blue)",
+        }}
       />
       <div
-        className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-15 pointer-events-none"
-        style={{ background: "var(--accent-cyan)" }}
+        style={{
+          position: "absolute",
+          bottom: "25%",
+          right: "25%",
+          width: "18rem",
+          height: "18rem",
+          borderRadius: "9999px",
+          filter: "blur(64px)",
+          opacity: 0.15,
+          pointerEvents: "none",
+          background: "var(--accent-cyan)",
+        }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "56rem", margin: "0 auto" }}>
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 mb-8">
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
           <span
-            className="text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full"
             style={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              padding: "0.4rem 1rem",
+              borderRadius: "9999px",
               border: "1px solid var(--border)",
               background: "var(--accent-blue-dim)",
               color: "var(--accent-cyan)",
@@ -38,7 +75,15 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6" style={{ color: "var(--text-primary)" }}>
+        <h1
+          style={{
+            fontSize: "clamp(1.75rem, 4vw, 3rem)",
+            fontWeight: 700,
+            lineHeight: 1.15,
+            marginBottom: "1.5rem",
+            color: "var(--text-primary)",
+          }}
+        >
           {h.headline1}
           <br />
           <span className="gradient-text">{h.headline2}</span>
@@ -46,47 +91,102 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-          style={{ color: "var(--text-muted)" }}
+          style={{
+            fontSize: "1.1rem",
+            lineHeight: 1.75,
+            color: "var(--text-muted)",
+            maxWidth: "40rem",
+            margin: "0 auto 2.5rem",
+          }}
         >
           {h.sub}
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "4rem",
+          }}
+        >
           <a
             href="#contacto"
-            className="group flex items-center gap-2 font-semibold px-8 py-4 rounded-xl transition-all glow-blue text-white"
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontWeight: 600,
+              padding: "1rem 2rem",
+              borderRadius: "0.75rem",
               background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
+              color: "white",
+              textDecoration: "none",
+              transition: "opacity 0.2s",
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             {h.cta1}
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} />
           </a>
           <a
             href="#servicios"
-            className="font-semibold px-8 py-4 rounded-xl transition-all"
             style={{
+              fontWeight: 600,
+              padding: "1rem 2rem",
+              borderRadius: "0.75rem",
               border: "1px solid var(--border)",
               color: "var(--text-primary)",
               background: "var(--accent-blue-dim)",
+              textDecoration: "none",
+              transition: "border-color 0.2s",
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
           >
             {h.cta2}
           </a>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "1rem",
+            maxWidth: "34rem",
+            margin: "0 auto",
+          }}
+        >
           {[h.stat1, h.stat2, h.stat3].map((s) => (
             <div
               key={s.label}
-              className="flex flex-col items-center p-4 rounded-xl"
-              style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "1rem",
+                borderRadius: "0.75rem",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
+              }}
             >
-              <span className="text-2xl md:text-3xl font-bold gradient-text">{s.value}</span>
-              <span className="text-xs mt-1 text-center leading-tight" style={{ color: "var(--text-muted)" }}>
+              <span className="gradient-text" style={{ fontSize: "1.75rem", fontWeight: 700 }}>
+                {s.value}
+              </span>
+              <span
+                style={{
+                  fontSize: "0.7rem",
+                  marginTop: "0.25rem",
+                  textAlign: "center",
+                  lineHeight: 1.4,
+                  color: "var(--text-muted)",
+                }}
+              >
                 {s.label}
               </span>
             </div>
@@ -95,7 +195,15 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-slow" style={{ color: "var(--text-muted)" }}>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "2rem",
+          left: "50%",
+          transform: "translateX(-50%)",
+          color: "var(--text-muted)",
+        }}
+      >
         <ChevronDown size={24} />
       </div>
     </section>

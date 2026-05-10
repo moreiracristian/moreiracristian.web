@@ -73,3 +73,18 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
 }
+
+/* Contenedor centrado — reemplaza max-w-6xl mx-auto */
+.section-inner {
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+section, footer {
+  width: 100%;
+  display: block;
+}

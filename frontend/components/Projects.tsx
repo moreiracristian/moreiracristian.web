@@ -8,86 +8,59 @@ export default function Projects() {
   const p = tr.projects;
 
   return (
-    <section id="proyectos" className="py-24 px-6" style={{ background: "var(--bg-primary)" }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span
-            className="text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6 inline-block"
-            style={{ border: "1px solid var(--border)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}
-          >
+    <section id="proyectos" style={{ background: "var(--bg-primary)", width: "100%", padding: "6rem 0" }}>
+      <div className="section-inner">
+        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid var(--border)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
             {p.tag}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+          <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: "1rem", color: "var(--text-primary)" }}>
             {p.title}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
+          <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto", lineHeight: 1.7 }}>
             {p.subtitle}
           </p>
         </div>
 
-        {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem", marginBottom: "2.5rem" }}>
           {p.items.map((item) => (
             <div
               key={item.title}
-              className="group flex flex-col p-6 rounded-2xl transition-all duration-300"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
-              }}
+              style={{ display: "flex", flexDirection: "column", padding: "1.75rem", borderRadius: "1rem", background: "var(--bg-card)", border: "1px solid var(--border)", transition: "border-color 0.2s" }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(59,130,246,0.4)")}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
             >
-              {/* Company + link */}
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium" style={{ color: "var(--accent-cyan)" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "var(--accent-cyan)" }}>
                   {item.company}
                 </span>
                 {"link" in item && item.link && (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="opacity-50 hover:opacity-100 transition-opacity"
-                    style={{ color: "var(--text-muted)" }}
-                    aria-label="Ver proyecto en GitHub"
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", opacity: 0.5, transition: "opacity 0.2s" }} aria-label="Ver en GitHub"
+                    onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.5")}
                   >
                     <ExternalLink size={16} />
                   </a>
                 )}
               </div>
 
-              <h3 className="text-base font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+              <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.5rem", color: "var(--text-primary)" }}>
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--text-muted)" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-muted)", flex: 1 }}>
                 {item.desc}
               </p>
 
-              {/* Highlight */}
-              <div
-                className="flex items-center gap-2 mt-4 p-3 rounded-lg"
-                style={{ background: "var(--accent-blue-dim)", border: "1px solid rgba(59,130,246,0.15)" }}
-              >
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1rem", padding: "0.75rem", borderRadius: "0.5rem", background: "var(--accent-blue-dim)", border: "1px solid rgba(59,130,246,0.15)" }}>
                 <Zap size={14} style={{ color: "var(--accent-blue)", flexShrink: 0 }} />
-                <span className="text-xs font-medium" style={{ color: "var(--accent-blue)" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "var(--accent-blue)" }}>
                   {item.highlight}
                 </span>
               </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-4">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem" }}>
                 {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-1 rounded-md"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      color: "var(--text-muted)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
+                  <span key={tag} style={{ fontSize: "0.75rem", padding: "0.2rem 0.6rem", borderRadius: "0.375rem", background: "rgba(255,255,255,0.04)", color: "var(--text-muted)", border: "1px solid rgba(255,255,255,0.08)" }}>
                     {tag}
                   </span>
                 ))}
@@ -96,14 +69,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* GitHub link */}
-        <div className="text-center mt-10">
-          <a
-            href="https://github.com/moreiracristian"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-            style={{ color: "var(--text-muted)" }}
+        <div style={{ textAlign: "center" }}>
+          <a href="https://github.com/moreiracristian" target="_blank" rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem", fontWeight: 500, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.2s" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cyan)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
           >
