@@ -3,12 +3,15 @@
 import { useState, useEffect } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { lang, setLang, tr } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     let lastY = 0;
@@ -28,11 +31,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const p = isHome ? "" : "/";
   const links = [
-    { label: tr.nav.services, href: "#servicios" },
-    { label: tr.nav.howIWork, href: "#como-trabajo" },
-    { label: tr.nav.projects, href: "#proyectos" },
-    { label: tr.nav.about, href: "#sobre-mi" },
+    { label: tr.nav.services, href: `${p}#servicios` },
+    { label: tr.nav.howIWork, href: `${p}#como-trabajo` },
+    { label: tr.nav.projects, href: `${p}#proyectos` },
+    { label: tr.nav.about, href: `${p}#sobre-mi` },
+    { label: tr.nav.blog, href: "/blog" },
   ];
 
   return (
@@ -64,7 +69,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <a
-          href="#inicio"
+          href={isHome ? "#inicio" : "/"}
           style={{ fontWeight: 700, fontSize: "1.125rem", letterSpacing: "-0.02em", color: "var(--text-primary)", textDecoration: "none" }}
         >
           CM<span className="gradient-text">.</span>
@@ -106,7 +111,7 @@ export default function Navbar() {
             {lang === "es" ? "EN" : "ES"}
           </button>
           <a
-            href="#contacto"
+            href={`${p}#contacto`}
             style={{
               fontSize: "0.875rem",
               fontWeight: 600,
@@ -175,7 +180,7 @@ export default function Navbar() {
               {lang === "es" ? "EN" : "ES"}
             </button>
             <a
-              href="#contacto"
+              href={`${p}#contacto`}
               onClick={() => setOpen(false)}
               style={{
                 fontSize: "0.875rem",

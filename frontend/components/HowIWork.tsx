@@ -68,7 +68,7 @@ export default function HowIWork() {
 
             <div style={{ gridColumn: "span 2", padding: "1.5rem", borderRadius: "1rem", background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))", border: "1px solid var(--border)" }}>
               <p style={{ fontSize: "0.875rem", fontStyle: "italic", lineHeight: 1.7, color: "var(--text-muted)" }}>
-                &ldquo;No entregamos un informe y desaparecemos. Somos el respaldo continuo para que entiendas lo que pasa en tu negocio y puedas actuar sobre eso.&rdquo;
+                &ldquo;No entrego un informe y desaparezco. Soy tu respaldo continuo para que entiendas lo que pasa en tu negocio y puedas actuar sobre eso.&rdquo;
               </p>
               <p style={{ fontSize: "0.75rem", marginTop: "0.75rem", fontWeight: 600, color: "var(--accent-cyan)" }}>
                 — Cristian Moreira

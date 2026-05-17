@@ -88,3 +88,8 @@ section, footer {
   width: 100%;
   display: block;
 }
+
+section + section {
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+}
+

@@ -4,17 +4,18 @@ export const t = {
   es: {
     nav: {
       services: "Servicios",
-      howIWork: "Cómo trabajamos",
+      howIWork: "Cómo trabajo",
       projects: "Proyectos",
       about: "Sobre mí",
       contact: "Contacto",
+      blog: "Blog",
       cta: "Hablemos",
     },
     hero: {
       badge: "Analista de Datos · Business Intelligence",
       headline1: "Tus datos ya existen.",
       headline2: "Lo que falta es convertirlos en información.",
-      sub: "Cada venta, cada compra, cada movimiento de tu negocio deja un rastro. Nosotros lo leemos y te entregamos información clara para que vos tomes las decisiones.",
+      sub: "Cada venta, cada compra, cada movimiento de tu negocio deja un rastro. Lo leo y te entrego información clara para que vos tomes las decisiones.",
       cta1: "Hablemos de tu negocio",
       cta2: "Ver servicios",
       stat1: { value: "12+", label: "años en retail y consumo masivo" },
@@ -50,10 +51,10 @@ export const t = {
       ],
     },
     services: {
-      tag: "Lo que hacemos",
+      tag: "Lo que hago",
       title: "De datos a información accionable",
       subtitle:
-        "Leemos lo que ya registrás y te entregamos información concreta: qué está pasando y por qué. La decisión es tuya.",
+        "Leo lo que ya registrás y te entrego información concreta: qué está pasando y por qué. La decisión es tuya.",
       items: [
         {
           icon: "DollarSign",
@@ -94,30 +95,30 @@ export const t = {
       ],
     },
     howIWork: {
-      tag: "Nuestra forma de trabajar",
-      title: "Tus datos hablan. Nosotros los interpretamos.",
+      tag: "Mi forma de trabajar",
+      title: "Tus datos hablan. Yo los interpreto.",
       subtitle:
-        "No somos una agencia. Somos un equipo comprometido con el crecimiento de tu negocio.",
+        "No soy una agencia. Soy un analista comprometido con el crecimiento de tu negocio.",
       steps: [
         {
           num: "01",
-          title: "Escuchamos antes de analizar",
-          desc: "Primero entendemos tu negocio, tus decisiones y tus dolores. Los datos vienen después.",
+          title: "Escucho antes de analizar",
+          desc: "Primero entiendo tu negocio, tus decisiones y tus dolores. Los datos vienen después.",
         },
         {
           num: "02",
-          title: "Trabajamos con lo que tenés",
-          desc: "No necesitás sistemas caros ni grandes cambios. Empezamos con tus planillas, tu sistema y tus datos actuales.",
+          title: "Trabajo con lo que tenés",
+          desc: "No necesitás sistemas caros ni grandes cambios. Empiezo con tus planillas, tu sistema y tus datos actuales.",
         },
         {
           num: "03",
-          title: "Explicamos sin jerga",
+          title: "Explico sin jerga",
           desc: "Cada análisis viene con una conclusión clara: qué significa, qué podés hacer y qué impacto tiene.",
         },
         {
           num: "04",
-          title: "Estamos disponibles cuando nos necesitás",
-          desc: "No entregamos un informe y desaparecemos. Somos tu respaldo continuo para interpretar lo que pasa en tu negocio.",
+          title: "Estoy disponible cuando me necesitás",
+          desc: "No entrego un informe y desaparezco. Soy tu respaldo continuo para interpretar lo que pasa en tu negocio.",
         },
       ],
       values: [
@@ -169,9 +170,10 @@ export const t = {
       tag: "Sobre mí",
       title: "12 años mirando números que mueven negocios",
       paragraphs: [
-        "Trabajé más de una década en las empresas de retail más grandes de Argentina — Falabella, Cencosud, Sodimac, Cetrogar. Vi de cerca cómo las decisiones basadas en datos cambian el resultado de un negocio.",
-        "Hoy aplico esa experiencia para acompañar a PyMEs que quieren crecer pero no tienen un equipo de análisis propio. Soy tu analista de datos de confianza: comprometido, disponible y siempre en lenguaje de negocio.",
-        "Formación en Data Science (Henry Bootcamp, +800 hs), Business Intelligence (UTN) e Ingeniería en Sistemas. Todo puesto al servicio de un objetivo simple: que tus datos trabajen para vos.",
+        "Trabajé más de una década en las empresas de retail más grandes de Argentina — Falabella, Cencosud, Sodimac, Cetrogar. Vi de cerca cómo las decisiones basadas en datos cambian el resultado de un negocio — y también cómo la falta de análisis los hunde.",
+        "En esos años aprendí que los problemas de datos son siempre problemas de negocio: precios que erosionan el margen sin que nadie lo note, stock que se inmoviliza en el depósito, reportes que se arman pero nadie lee. Entiendo ese lenguaje y sé traducirlo en decisiones concretas.",
+        "Hoy acompaño a PyMEs que quieren crecer pero no tienen un analista propio. Soy tu respaldo de datos: comprometido, disponible y siempre en lenguaje de negocio.",
+        "Formación en Data Science (Henry Bootcamp, +800 hs), Business Intelligence (UTN) e Ingeniería en Sistemas. Todo al servicio de un objetivo simple: que tus datos trabajen para vos.",
       ],
       skills: [
         "Excel Avanzado",
@@ -202,7 +204,7 @@ export const t = {
         message: "¿Cuál es tu mayor desafío con los datos de tu negocio?",
         send: "Enviar mensaje",
         sending: "Enviando...",
-        success: "¡Mensaje recibido! Te respondemos en menos de 24 horas.",
+        success: "¡Mensaje recibido! Te respondo en menos de 24 horas.",
         error: "Algo salió mal. Escribime directo a moreiracristianmiguel@gmail.com",
       },
       direct: {
@@ -224,12 +226,80 @@ export const t = {
       error: "Algo salió mal. Intentá de nuevo.",
       privacy: "Sin spam. Podés darte de baja cuando quieras.",
     },
+    segments: {
+      tag: "¿Para quién trabajo?",
+      title: "Tu negocio tiene datos. Los convierto en información.",
+      subtitle: "Trabajo con empresas que quieren crecer pero no tienen un analista de datos propio.",
+      items: [
+        {
+          icon: "ShoppingCart",
+          title: "Retail y consumo masivo",
+          desc: "Empresas con productos, ventas y costos que necesitan visibilidad de márgenes, rotación y performance comercial.",
+          examples: ["Supermercados", "Distribuidoras", "Importadoras"],
+        },
+        {
+          icon: "Truck",
+          title: "Mayoristas y distribuidoras",
+          desc: "Negocios con alta rotación de stock que necesitan controlar reposición, quiebres y rentabilidad por cliente.",
+          examples: ["Mayoristas", "Logística", "Proveedores B2B"],
+        },
+        {
+          icon: "Store",
+          title: "Comercios y tiendas",
+          desc: "Comercios que quieren saber qué productos vender, cuándo reponer y cómo maximizar el margen por metro cuadrado.",
+          examples: ["Ferreterías", "Farmacias", "Indumentaria"],
+        },
+        {
+          icon: "Building2",
+          title: "Empresas sin equipo de datos",
+          desc: "Cualquier PyME que toma decisiones importantes con planillas desactualizadas o sin métricas claras.",
+          examples: ["Servicios", "Manufactura", "Agropecuario"],
+        },
+      ],
+    },
+    faq: {
+      tag: "Preguntas frecuentes",
+      title: "Lo que más me preguntan antes de empezar",
+      subtitle: "Si tu duda no está acá, escribime. Toda consulta es bienvenida.",
+      items: [
+        {
+          q: "¿Necesito un sistema especial para trabajar con vos?",
+          a: "No. Trabajo con lo que ya tenés: Excel, planillas de Google, exportaciones de tu sistema de gestión, o incluso archivos manuales. No necesitás invertir en tecnología nueva para empezar.",
+        },
+        {
+          q: "¿Cuánto tiempo lleva tener los primeros resultados?",
+          a: "Depende del tipo de análisis, pero en general el primer informe está listo entre 5 y 10 días hábiles desde que recibo los datos. Los dashboards en Power BI pueden tardar un poco más según la complejidad.",
+        },
+        {
+          q: "¿Mis datos están seguros y son confidenciales?",
+          a: "Sí, totalmente. Firmamos un acuerdo de confidencialidad antes de compartir cualquier archivo. Nunca comparto ni uso tus datos para ningún otro propósito. Tu información es tuya.",
+        },
+        {
+          q: "¿Qué pasa si no sé bien qué necesito?",
+          a: "Eso es exactamente para lo que sirve la primera conversación. Contame cómo tomás decisiones hoy, qué información te falta y qué problema te quita el sueño. A partir de eso definimos juntos qué tiene sentido analizar.",
+        },
+        {
+          q: "¿Con qué tamaño de empresa trabajás?",
+          a: "Principalmente con PyMEs: desde comercios pequeños con 2-3 empleados hasta empresas medianas con equipos de 50 o más personas. No hago consultoría para grandes corporaciones — ese no es mi foco.",
+        },
+      ],
+    },
+    blog: {
+      tag: "Blog",
+      title: "Ideas para usar mejor tus datos",
+      subtitle: "Sin jerga técnica. Casos reales, herramientas prácticas y una sola idea por artículo.",
+      readMore: "Leer artículo",
+      readTime: "min de lectura",
+      backToHome: "← Volver al inicio",
+      backToBlog: "← Volver al blog",
+      allArticles: "Ver todos los artículos",
+    },
     footer: {
       tagline: "Analista de Datos · Business Intelligence · Pricing & Retail Analytics",
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Servicios",
-        howIWork: "Cómo trabajamos",
+        howIWork: "Cómo trabajo",
         projects: "Proyectos",
         contact: "Contacto",
       },
@@ -239,17 +309,18 @@ export const t = {
   en: {
     nav: {
       services: "Services",
-      howIWork: "How we work",
+      howIWork: "How I work",
       projects: "Projects",
       about: "About",
       contact: "Contact",
+      blog: "Blog",
       cta: "Let's talk",
     },
     hero: {
       badge: "Data Analyst · Business Intelligence",
       headline1: "Your data already exists.",
       headline2: "What's missing is turning it into information.",
-      sub: "Every sale, every purchase, every move your business makes leaves a trace. We read that trace and tell you what to do with it.",
+      sub: "Every sale, every purchase, every move your business makes leaves a trace. I read that trace and tell you what to do with it.",
       cta1: "Let's talk about your business",
       cta2: "See services",
       stat1: { value: "12+", label: "years in retail & consumer goods" },
@@ -285,10 +356,10 @@ export const t = {
       ],
     },
     services: {
-      tag: "What we do",
+      tag: "What I do",
       title: "From data to actionable information",
       subtitle:
-        "We read what you already record and deliver concrete information: what's happening and why. The decision is yours.",
+        "I read what you already record and deliver concrete information: what's happening and why. The decision is yours.",
       items: [
         {
           icon: "DollarSign",
@@ -329,29 +400,29 @@ export const t = {
       ],
     },
     howIWork: {
-      tag: "How we work",
-      title: "Your data speaks. We interpret it.",
-      subtitle: "We're not an agency. We're a team committed to your business growth.",
+      tag: "How I work",
+      title: "Your data speaks. I interpret it.",
+      subtitle: "I'm not an agency. I'm a committed data analyst focused on your business growth.",
       steps: [
         {
           num: "01",
-          title: "We listen before we analyze",
-          desc: "First we understand your business, your decisions, and your pain points. The data comes after.",
+          title: "I listen before I analyze",
+          desc: "First I understand your business, your decisions, and your pain points. The data comes after.",
         },
         {
           num: "02",
-          title: "We work with what you have",
-          desc: "You don't need expensive systems or big changes. We start with your spreadsheets, your system, and your current data.",
+          title: "I work with what you have",
+          desc: "You don't need expensive systems or big changes. I start with your spreadsheets, your system, and your current data.",
         },
         {
           num: "03",
-          title: "We explain without jargon",
+          title: "I explain without jargon",
           desc: "Every analysis comes with a clear conclusion: what it means, what you can do, and what the impact is.",
         },
         {
           num: "04",
-          title: "We're available when you need us",
-          desc: "We don't deliver a report and disappear. We're your ongoing support for interpreting what's happening in your business.",
+          title: "I'm available when you need me",
+          desc: "I don't deliver a report and disappear. I'm your ongoing support for interpreting what's happening in your business.",
         },
       ],
       values: [
@@ -403,9 +474,10 @@ export const t = {
       tag: "About",
       title: "12 years reading numbers that move businesses",
       paragraphs: [
-        "I worked for over a decade at the largest retail companies in Argentina — Falabella, Cencosud, Sodimac, Cetrogar. I witnessed firsthand how data-driven decisions change business outcomes.",
-        "Today I apply that experience to support SMEs that want to grow but don't have their own analytics team. I'm your trusted data analyst: committed, available, and always in business language.",
-        "Trained in Data Science (Henry Bootcamp, +800 hours), Business Intelligence (UTN), and Systems Engineering. All put to work for a simple goal: making your data work for you.",
+        "I worked for over a decade at the largest retail companies in Argentina — Falabella, Cencosud, Sodimac, Cetrogar. I witnessed firsthand how data-driven decisions change business outcomes — and how the lack of analysis sinks them.",
+        "In those years I learned that data problems are always business problems: prices that erode margin without anyone noticing, inventory frozen in the warehouse, reports that get built but nobody reads. I understand that language and know how to turn it into concrete decisions.",
+        "Today I support SMEs that want to grow but don't have their own data analyst. I'm your data backbone: committed, available, and always in business language.",
+        "Trained in Data Science (Henry Bootcamp, +800 hours), Business Intelligence (UTN), and Systems Engineering. All in service of a simple goal: making your data work for you.",
       ],
       skills: [
         "Advanced Excel",
@@ -435,7 +507,7 @@ export const t = {
         message: "What's your biggest challenge with your business data?",
         send: "Send message",
         sending: "Sending...",
-        success: "Message received! We'll reply within 24 hours.",
+        success: "Message received! I'll reply within 24 hours.",
         error: "Something went wrong. Email me directly at moreiracristianmiguel@gmail.com",
       },
       direct: {
@@ -457,12 +529,80 @@ export const t = {
       error: "Something went wrong. Please try again.",
       privacy: "No spam. Unsubscribe anytime.",
     },
+    segments: {
+      tag: "Who I work with",
+      title: "Your business has data. I turn it into information.",
+      subtitle: "I work with companies that want to grow but don't have their own data analyst.",
+      items: [
+        {
+          icon: "ShoppingCart",
+          title: "Retail & consumer goods",
+          desc: "Companies with products, sales, and costs that need visibility into margins, turnover, and commercial performance.",
+          examples: ["Supermarkets", "Distributors", "Importers"],
+        },
+        {
+          icon: "Truck",
+          title: "Wholesalers & distributors",
+          desc: "High-turnover businesses that need to control replenishment, stockouts, and profitability by customer.",
+          examples: ["Wholesalers", "Logistics", "B2B suppliers"],
+        },
+        {
+          icon: "Store",
+          title: "Shops & stores",
+          desc: "Retailers that want to know which products to sell, when to restock, and how to maximize margin per square meter.",
+          examples: ["Hardware stores", "Pharmacies", "Apparel"],
+        },
+        {
+          icon: "Building2",
+          title: "Companies without a data team",
+          desc: "Any SME making important decisions with outdated spreadsheets or without clear metrics.",
+          examples: ["Services", "Manufacturing", "Agribusiness"],
+        },
+      ],
+    },
+    faq: {
+      tag: "FAQ",
+      title: "What people ask me before we start",
+      subtitle: "If your question isn't here, reach out. Every inquiry is welcome.",
+      items: [
+        {
+          q: "Do I need a special system to work with you?",
+          a: "No. I work with what you already have: Excel, Google Sheets, exports from your management system, or even manual files. You don't need to invest in new technology to get started.",
+        },
+        {
+          q: "How long does it take to get the first results?",
+          a: "It depends on the type of analysis, but generally the first report is ready within 5 to 10 business days of receiving the data. Power BI dashboards may take a bit longer depending on complexity.",
+        },
+        {
+          q: "Is my data safe and confidential?",
+          a: "Yes, completely. We sign a confidentiality agreement before sharing any files. I never share or use your data for any other purpose. Your information is yours.",
+        },
+        {
+          q: "What if I don't know exactly what I need?",
+          a: "That's exactly what the first conversation is for. Tell me how you make decisions today, what information you're missing, and what problem keeps you up at night. From there we define together what makes sense to analyze.",
+        },
+        {
+          q: "What size companies do you work with?",
+          a: "Primarily SMEs: from small shops with 2-3 employees to mid-sized companies with teams of 50 or more. We don't do consulting for large corporations — that's not our focus.",
+        },
+      ],
+    },
+    blog: {
+      tag: "Blog",
+      title: "Ideas to use your data better",
+      subtitle: "No technical jargon. Real cases, practical tools, and one idea per article.",
+      readMore: "Read article",
+      readTime: "min read",
+      backToHome: "← Back to home",
+      backToBlog: "← Back to blog",
+      allArticles: "View all articles",
+    },
     footer: {
       tagline: "Data Analyst · Business Intelligence · Pricing & Retail Analytics",
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Services",
-        howIWork: "How we work",
+        howIWork: "How I work",
         projects: "Projects",
         contact: "Contact",
       },
