@@ -49,7 +49,7 @@ export default function Contact() {
 
   const directLinks = [
     { icon: MessageCircle, label: c.direct.whatsapp, href: "https://wa.me/543624024589", color: "#25D366" },
-    { icon: Mail, label: "moreiracristianmiguel@gmail.com", href: "mailto:moreiracristianmiguel@gmail.com", color: "var(--accent-blue)" },
+    { icon: Mail, label: "bymoreiracristian@gmail.com", href: "mailto:bymoreiracristian@gmail.com", color: "var(--accent-blue)" },
     { icon: LinkedinIcon, label: "linkedin.com/in/moreiracristian", href: "https://linkedin.com/in/moreiracristian", color: "#0A66C2" },
   ];
 
@@ -94,7 +94,7 @@ export default function Contact() {
         >
           {/* Form */}
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", minWidth: 0, height: "100%" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div className="grid-form-row">
               <input
                 name="name"
                 value={form.name}

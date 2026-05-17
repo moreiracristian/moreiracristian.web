@@ -153,15 +153,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1rem",
-            maxWidth: "34rem",
-            margin: "0 auto",
-          }}
-        >
+        <div className="grid-stats">
           {[h.stat1, h.stat2, h.stat3].map((s) => (
             <div
               key={s.label}
