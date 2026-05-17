@@ -1,12 +1,10 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-
 export async function sendContact(data: {
   name: string;
   email: string;
   company: string;
   message: string;
 }) {
-  const res = await fetch(`${API_BASE}/api/contact/`, {
+  const res = await fetch("/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -16,7 +14,7 @@ export async function sendContact(data: {
 }
 
 export async function subscribe(email: string) {
-  const res = await fetch(`${API_BASE}/api/subscribe/`, {
+  const res = await fetch("/api/subscribe", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),
