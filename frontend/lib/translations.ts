@@ -205,7 +205,7 @@ export const t = {
         send: "Enviar mensaje",
         sending: "Enviando...",
         success: "¡Mensaje recibido! Te respondo en menos de 24 horas.",
-        error: "Algo salió mal. Escribime directo a bymoreiracristian@gmail.com",
+        error: "Algo salió mal. Escribime directo a moreiracristianmiguel@gmail.com",
       },
       direct: {
         title: "O escribime directamente",
@@ -508,7 +508,7 @@ export const t = {
         send: "Send message",
         sending: "Sending...",
         success: "Message received! I'll reply within 24 hours.",
-        error: "Something went wrong. Email me directly at bymoreiracristian@gmail.com",
+        error: "Something went wrong. Email me directly at moreiracristianmiguel@gmail.com",
       },
       direct: {
         title: "Or reach out directly",
