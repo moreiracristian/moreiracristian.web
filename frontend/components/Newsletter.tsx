@@ -26,6 +26,7 @@ export default function Newsletter() {
 
   return (
     <section
+      id="newsletter"
       style={{
         background: "var(--bg-surface)",
         width: "100%",
@@ -34,13 +35,13 @@ export default function Newsletter() {
         overflow: "hidden",
       }}
     >
-      {/* Glow */}
+      {/* Subtle navy glow */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(30,58,138,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -64,11 +65,11 @@ export default function Newsletter() {
             alignItems: "center",
             justifyContent: "center",
             margin: "0 auto 1.5rem",
-            background: "linear-gradient(135deg, var(--accent-blue-dim), var(--accent-cyan-dim))",
-            border: "1px solid var(--border)",
+            background: "var(--accent-blue-dim)",
+            border: "1px solid rgba(30,58,138,0.2)",
           }}
         >
-          <Mail size={24} style={{ color: "var(--accent-cyan)" }} />
+          <Mail size={24} style={{ color: "var(--accent-blue)" }} />
         </div>
 
         {/* Tag */}
@@ -82,9 +83,9 @@ export default function Newsletter() {
             padding: "0.4rem 1rem",
             borderRadius: "9999px",
             marginBottom: "1.25rem",
-            border: "1px solid var(--border)",
-            color: "var(--accent-cyan)",
-            background: "var(--accent-cyan-dim)",
+            border: "1px solid rgba(30,58,138,0.2)",
+            color: "var(--accent-blue)",
+            background: "var(--accent-blue-dim)",
           }}
         >
           {n.tag}
@@ -125,9 +126,9 @@ export default function Newsletter() {
               padding: "1rem",
               borderRadius: "0.75rem",
               fontSize: "0.875rem",
-              background: "rgba(34,197,94,0.1)",
-              border: "1px solid rgba(34,197,94,0.3)",
-              color: "#4ade80",
+              background: "rgba(34,197,94,0.08)",
+              border: "1px solid rgba(34,197,94,0.25)",
+              color: "#16a34a",
             }}
           >
             <CheckCircle size={18} /> {n.success}
@@ -152,16 +153,24 @@ export default function Newsletter() {
               style={{
                 flex: "1 1 10rem",
                 background: "var(--bg-card)",
-                border: "1px solid var(--border)",
+                border: "1px solid rgba(156,163,175,0.4)",
                 borderRadius: "10px",
                 padding: "12px 16px",
                 color: "var(--text-primary)",
                 fontSize: "14px",
                 outline: "none",
                 minWidth: 0,
+                transition: "border-color 0.2s, box-shadow 0.2s",
+                boxShadow: "var(--shadow-card)",
               }}
-              onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-              onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent-blue)";
+                e.currentTarget.style.boxShadow = "0 0 0 3px rgba(30,58,138,0.08)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "rgba(156,163,175,0.4)";
+                e.currentTarget.style.boxShadow = "var(--shadow-card)";
+              }}
             />
             <button
               type="submit"
@@ -171,12 +180,13 @@ export default function Newsletter() {
                 padding: "12px 24px",
                 borderRadius: "10px",
                 border: "none",
-                background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
+                background: "var(--accent-blue)",
                 color: "white",
                 cursor: status === "loading" ? "not-allowed" : "pointer",
                 opacity: status === "loading" ? 0.7 : 1,
                 whiteSpace: "nowrap",
                 fontSize: "0.9rem",
+                boxShadow: "0 2px 8px rgba(30,58,138,0.25)",
               }}
             >
               {status === "loading" ? n.subscribing : n.cta}
@@ -194,7 +204,7 @@ export default function Newsletter() {
               gap: "0.5rem",
               marginTop: "0.75rem",
               fontSize: "0.875rem",
-              color: "#f87171",
+              color: "#dc2626",
             }}
           >
             <AlertCircle size={14} /> {n.error}

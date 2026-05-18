@@ -49,10 +49,11 @@ export default function Navbar() {
         right: 0,
         zIndex: 50,
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
-        transition: "transform 0.4s ease, background 0.3s ease",
-        background: scrolled ? "rgba(10, 15, 30, 0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(59,130,246,0.15)" : "none",
+        transition: "transform 0.4s ease, background 0.3s ease, box-shadow 0.3s ease",
+        background: (scrolled || open) ? "rgba(255,255,255,0.97)" : "transparent",
+        backdropFilter: (scrolled || open) ? "blur(12px)" : "none",
+        borderBottom: (scrolled || open) ? "1px solid rgba(156,163,175,0.2)" : "none",
+        boxShadow: (scrolled || open) ? "0 1px 12px rgba(0,0,0,0.06)" : "none",
       }}
     >
       <div
@@ -70,7 +71,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href={isHome ? "#inicio" : "/"}
-          style={{ fontWeight: 700, fontSize: "1.125rem", letterSpacing: "-0.02em", color: "var(--text-primary)", textDecoration: "none" }}
+          style={{ fontWeight: 700, fontSize: "1.125rem", letterSpacing: "-0.02em", color: (scrolled || open) ? "var(--text-primary)" : "#FFFFFF", textDecoration: "none", transition: "color 0.3s" }}
         >
           CM<span className="gradient-text">.</span>
         </a>
@@ -81,9 +82,9 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              style={{ fontSize: "0.875rem", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cyan)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+              style={{ fontSize: "0.875rem", color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.75)", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = scrolled ? "var(--accent-blue)" : "#FFFFFF")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.75)")}
             >
               {l.label}
             </a>
@@ -99,14 +100,14 @@ export default function Navbar() {
               fontWeight: 500,
               padding: "0.25rem 0.75rem",
               borderRadius: "9999px",
-              border: "1px solid var(--border)",
-              color: "var(--text-muted)",
-              background: "var(--accent-blue-dim)",
+              border: scrolled ? "1px solid rgba(156,163,175,0.4)" : "1px solid rgba(255,255,255,0.3)",
+              color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.8)",
+              background: scrolled ? "var(--accent-blue-dim)" : "rgba(255,255,255,0.08)",
               cursor: "pointer",
               transition: "border-color 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = scrolled ? "var(--accent-blue)" : "rgba(255,255,255,0.6)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = scrolled ? "rgba(156,163,175,0.4)" : "rgba(255,255,255,0.3)")}
           >
             {lang === "es" ? "EN" : "ES"}
           </button>
@@ -117,12 +118,13 @@ export default function Navbar() {
               fontWeight: 600,
               padding: "0.5rem 1.25rem",
               borderRadius: "0.5rem",
-              background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
-              color: "white",
+              background: scrolled ? "var(--accent-blue)" : "#FFFFFF",
+              color: scrolled ? "#FFFFFF" : "#1E3A8A",
               textDecoration: "none",
-              transition: "opacity 0.2s",
+              transition: "opacity 0.2s, box-shadow 0.2s",
+              boxShadow: scrolled ? "none" : "0 2px 8px rgba(0,0,0,0.15)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             {tr.nav.cta}
@@ -132,7 +134,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           className="md:hidden"
-          style={{ color: "var(--text-primary)", background: "none", border: "none", cursor: "pointer", padding: "0.25rem" }}
+          style={{ color: (scrolled || open) ? "var(--text-primary)" : "#FFFFFF", background: "none", border: "none", cursor: "pointer", padding: "0.25rem" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -144,12 +146,13 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            background: "rgba(10,15,30,0.98)",
-            borderTop: "1px solid var(--border)",
+            background: "rgba(255,255,255,0.98)",
+            borderTop: "1px solid rgba(156,163,175,0.2)",
             padding: "1rem 1.5rem 1.5rem",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
           }}
           className="md:hidden"
         >
@@ -158,23 +161,24 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{ fontSize: "0.875rem", padding: "0.5rem 0", color: "var(--text-muted)", textDecoration: "none" }}
+              style={{ fontSize: "0.9rem", padding: "0.75rem 0", color: "var(--text-primary)", textDecoration: "none", borderBottom: "1px solid rgba(156,163,175,0.12)", display: "block", fontWeight: 500 }}
             >
               {l.label}
             </a>
           ))}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingTop: "0.5rem" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.75rem", paddingTop: "0.75rem" }}>
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
               style={{
-                fontSize: "0.7rem",
+                fontSize: "0.75rem",
                 fontWeight: 500,
-                padding: "0.25rem 0.75rem",
+                padding: "0.5rem 1rem",
                 borderRadius: "9999px",
-                border: "1px solid var(--border)",
+                border: "1px solid rgba(156,163,175,0.4)",
                 color: "var(--text-muted)",
-                background: "none",
+                background: "var(--accent-blue-dim)",
                 cursor: "pointer",
+                flexShrink: 0,
               }}
             >
               {lang === "es" ? "EN" : "ES"}
@@ -183,13 +187,14 @@ export default function Navbar() {
               href={`${p}#contacto`}
               onClick={() => setOpen(false)}
               style={{
-                fontSize: "0.875rem",
+                fontSize: "0.9rem",
                 fontWeight: 600,
-                padding: "0.5rem 1.25rem",
+                padding: "0.6rem 1.5rem",
                 borderRadius: "0.5rem",
-                background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
+                background: "var(--accent-blue)",
                 color: "white",
                 textDecoration: "none",
+                flexShrink: 0,
               }}
             >
               {tr.nav.cta}

@@ -7,10 +7,10 @@ export default function About() {
   const a = tr.about;
 
   return (
-    <section id="sobre-mi" style={{ background: "var(--bg-surface)", width: "100%", padding: "6rem 0" }}>
+    <section id="sobre-mi" style={{ background: "var(--bg-primary)", width: "100%", padding: "6rem 0" }}>
       <div className="section-inner">
         <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
-          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "2rem", border: "1px solid var(--border)", color: "var(--accent-cyan)", background: "var(--accent-cyan-dim)" }}>
+          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "2rem", border: "1px solid rgba(30,58,138,0.2)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
             {a.tag}
           </span>
 
@@ -29,7 +29,7 @@ export default function About() {
           {/* Skills */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2rem", justifyContent: "center" }}>
             {a.skills.map((skill) => (
-              <span key={skill} style={{ fontSize: "0.75rem", padding: "0.3rem 0.75rem", borderRadius: "9999px", fontWeight: 500, background: "var(--accent-blue-dim)", color: "var(--accent-blue)", border: "1px solid rgba(59,130,246,0.25)" }}>
+              <span key={skill} style={{ fontSize: "0.75rem", padding: "0.3rem 0.75rem", borderRadius: "9999px", fontWeight: 500, background: "var(--accent-blue-dim)", color: "var(--accent-blue)", border: "1px solid rgba(30,58,138,0.2)" }}>
                 {skill}
               </span>
             ))}
@@ -39,9 +39,9 @@ export default function About() {
             href="https://linkedin.com/in/moreiracristian"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: "0.875rem", fontWeight: 500, color: "var(--accent-blue)", textDecoration: "none", transition: "color 0.2s" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cyan)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--accent-blue)")}
+            style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--accent-blue)", textDecoration: "none", transition: "opacity 0.2s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.75")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             Ver perfil completo en LinkedIn →
           </a>

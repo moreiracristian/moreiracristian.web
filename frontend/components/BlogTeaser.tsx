@@ -13,7 +13,7 @@ export default function BlogTeaser() {
     <section id="blog" style={{ background: "var(--bg-surface)", width: "100%", padding: "6rem 0" }}>
       <div className="section-inner">
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid var(--border)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
+          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid rgba(30,58,138,0.2)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
             {b.tag}
           </span>
           <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: "1rem", color: "var(--text-primary)" }}>
@@ -24,7 +24,7 @@ export default function BlogTeaser() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
           {articles.map((article) => (
             <Link
               key={article.slug}
@@ -32,13 +32,21 @@ export default function BlogTeaser() {
               style={{ textDecoration: "none" }}
             >
               <div
-                style={{ height: "100%", display: "flex", flexDirection: "column", padding: "1.75rem", borderRadius: "1rem", background: "var(--bg-card)", border: "1px solid var(--border)", transition: "border-color 0.2s, transform 0.2s", cursor: "pointer" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.4)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                style={{ height: "100%", display: "flex", flexDirection: "column", padding: "1.75rem", borderRadius: "1rem", background: "var(--bg-card)", border: "1px solid var(--border)", transition: "border-color 0.2s, transform 0.2s, box-shadow 0.2s", cursor: "pointer", boxShadow: "var(--shadow-card)" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(30,58,138,0.35)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "var(--shadow-card-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "var(--shadow-card)";
+                }}
               >
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1rem" }}>
                   {article.tags.map((tag) => (
-                    <span key={tag} style={{ fontSize: "0.7rem", padding: "0.2rem 0.6rem", borderRadius: "0.375rem", background: "var(--accent-blue-dim)", color: "var(--accent-blue)", border: "1px solid rgba(59,130,246,0.2)" }}>
+                    <span key={tag} style={{ fontSize: "0.7rem", padding: "0.2rem 0.6rem", borderRadius: "0.375rem", background: "var(--accent-blue-dim)", color: "var(--accent-blue)", border: "1px solid rgba(30,58,138,0.15)" }}>
                       {tag}
                     </span>
                   ))}
@@ -71,7 +79,7 @@ export default function BlogTeaser() {
         <div style={{ textAlign: "center" }}>
           <Link
             href="/blog"
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontWeight: 600, padding: "1rem 2rem", borderRadius: "0.75rem", border: "1px solid var(--border)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)", textDecoration: "none", transition: "opacity 0.2s" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontWeight: 600, padding: "1rem 2rem", borderRadius: "0.75rem", border: "1px solid rgba(30,58,138,0.25)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)", textDecoration: "none", transition: "opacity 0.2s" }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.8")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >

@@ -34,43 +34,35 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={{ background: "var(--bg-primary)", borderTop: "1px solid var(--border)", width: "100%", padding: "4rem 0 2rem" }}>
+    <footer style={{ background: "#0F1E45", borderTop: "1px solid rgba(255,255,255,0.06)", width: "100%", padding: "4rem 0 2rem" }}>
       <div style={{ width: "100%", maxWidth: "72rem", margin: "0 auto", padding: "0 1.5rem", boxSizing: "border-box" }}>
         {/* Top grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1fr 1fr",
-            gap: "2rem",
-            marginBottom: "3rem",
-            width: "100%",
-          }}
-        >
+        <div className="footer-grid">
           {/* Brand */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            <p style={{ fontWeight: 700, fontSize: "1.25rem", color: "var(--text-primary)", margin: 0 }}>
+            <p style={{ fontWeight: 700, fontSize: "1.25rem", color: "#FFFFFF", margin: 0 }}>
               CM<span className="gradient-text">.</span>
             </p>
-            <p style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "var(--text-muted)", margin: 0 }}>
+            <p style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "rgba(255,255,255,0.55)", margin: 0 }}>
               {f.tagline}
             </p>
-            <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", margin: 0 }}>
+            <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)", margin: 0 }}>
               📍 {f.location}
             </p>
           </div>
 
           {/* Links */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-primary)", marginBottom: "0.25rem" }}>
+            <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.5)", marginBottom: "0.25rem" }}>
               Navegación
             </p>
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                style={{ fontSize: "0.875rem", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.2s", width: "fit-content" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cyan)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+                style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", textDecoration: "none", transition: "color 0.2s", width: "fit-content" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.55)")}
               >
                 {l.label}
               </a>
@@ -79,7 +71,7 @@ export default function Footer() {
 
           {/* Social */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-primary)", marginBottom: "0.25rem" }}>
+            <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.5)", marginBottom: "0.25rem" }}>
               Contacto
             </p>
             <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -97,20 +89,22 @@ export default function Footer() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border)",
-                    color: "var(--text-muted)",
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    color: "rgba(255,255,255,0.55)",
                     textDecoration: "none",
-                    transition: "border-color 0.2s, color 0.2s",
+                    transition: "border-color 0.2s, color 0.2s, background 0.2s",
                     flexShrink: 0,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--accent-blue)";
-                    e.currentTarget.style.color = "var(--accent-blue)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
+                    e.currentTarget.style.color = "#FFFFFF";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.12)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--border)";
-                    e.currentTarget.style.color = "var(--text-muted)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.55)";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.07)";
                   }}
                 >
                   <s.icon size={16} />
@@ -128,8 +122,8 @@ export default function Footer() {
                 borderRadius: "0.5rem",
                 width: "fit-content",
                 background: "rgba(37,211,102,0.1)",
-                border: "1px solid rgba(37,211,102,0.3)",
-                color: "#25D366",
+                border: "1px solid rgba(37,211,102,0.25)",
+                color: "#4ade80",
                 textDecoration: "none",
                 transition: "background 0.2s",
               }}
@@ -144,7 +138,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid var(--border)",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
             paddingTop: "1.5rem",
             display: "flex",
             flexWrap: "wrap",
@@ -153,10 +147,10 @@ export default function Footer() {
             gap: "0.5rem",
           }}
         >
-          <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", margin: 0 }}>
+          <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
             © {year} {f.copy}
           </p>
-          <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", margin: 0 }}>
+          <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
             Desarrollado por{" "}
             <span className="gradient-text" style={{ fontWeight: 600 }}>2moreit</span>
           </p>

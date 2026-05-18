@@ -22,35 +22,36 @@ export default function Hero() {
         textAlign: "center",
         padding: "0 1.5rem",
         overflow: "hidden",
+        background: "linear-gradient(160deg, #0A1628 0%, #1E3A8A 55%, #1D4ED8 100%)",
       }}
     >
       {/* Ambient glow blobs */}
       <div
         style={{
           position: "absolute",
-          top: "25%",
-          left: "25%",
-          width: "24rem",
-          height: "24rem",
+          top: "20%",
+          left: "20%",
+          width: "28rem",
+          height: "28rem",
           borderRadius: "9999px",
-          filter: "blur(64px)",
-          opacity: 0.2,
+          filter: "blur(80px)",
+          opacity: 0.25,
           pointerEvents: "none",
-          background: "var(--accent-blue)",
+          background: "#3B82F6",
         }}
       />
       <div
         style={{
           position: "absolute",
-          bottom: "25%",
-          right: "25%",
-          width: "18rem",
-          height: "18rem",
+          bottom: "20%",
+          right: "20%",
+          width: "20rem",
+          height: "20rem",
           borderRadius: "9999px",
-          filter: "blur(64px)",
-          opacity: 0.15,
+          filter: "blur(80px)",
+          opacity: 0.18,
           pointerEvents: "none",
-          background: "var(--accent-cyan)",
+          background: "#BFDBFE",
         }}
       />
 
@@ -65,9 +66,9 @@ export default function Hero() {
               textTransform: "uppercase",
               padding: "0.4rem 1rem",
               borderRadius: "9999px",
-              border: "1px solid var(--border)",
-              background: "var(--accent-blue-dim)",
-              color: "var(--accent-cyan)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              background: "rgba(255,255,255,0.08)",
+              color: "#93C5FD",
             }}
           >
             {h.badge}
@@ -81,12 +82,21 @@ export default function Hero() {
             fontWeight: 700,
             lineHeight: 1.15,
             marginBottom: "1.5rem",
-            color: "var(--text-primary)",
+            color: "#FFFFFF",
           }}
         >
           {h.headline1}
           <br />
-          <span className="gradient-text">{h.headline2}</span>
+          <span
+            style={{
+              background: "linear-gradient(135deg, #93C5FD, #BFDBFE)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            {h.headline2}
+          </span>
         </h1>
 
         {/* Subheadline */}
@@ -94,7 +104,7 @@ export default function Hero() {
           style={{
             fontSize: "1.1rem",
             lineHeight: 1.75,
-            color: "var(--text-muted)",
+            color: "rgba(255,255,255,0.7)",
             maxWidth: "40rem",
             margin: "0 auto 2.5rem",
           }}
@@ -103,16 +113,7 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1rem",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: "4rem",
-          }}
-        >
+        <div className="hero-ctas">
           <a
             href="#contacto"
             style={{
@@ -122,13 +123,20 @@ export default function Hero() {
               fontWeight: 600,
               padding: "1rem 2rem",
               borderRadius: "0.75rem",
-              background: "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
-              color: "white",
+              background: "#FFFFFF",
+              color: "#1E3A8A",
               textDecoration: "none",
-              transition: "opacity 0.2s",
+              transition: "opacity 0.2s, box-shadow 0.2s",
+              boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.92";
+              e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
+              e.currentTarget.style.boxShadow = "0 4px 14px rgba(0,0,0,0.2)";
+            }}
           >
             {h.cta1}
             <ArrowRight size={18} />
@@ -139,14 +147,21 @@ export default function Hero() {
               fontWeight: 600,
               padding: "1rem 2rem",
               borderRadius: "0.75rem",
-              border: "1px solid var(--border)",
-              color: "var(--text-primary)",
-              background: "var(--accent-blue-dim)",
+              border: "1px solid rgba(255,255,255,0.25)",
+              color: "#FFFFFF",
+              background: "rgba(255,255,255,0.08)",
               textDecoration: "none",
-              transition: "border-color 0.2s",
+              transition: "border-color 0.2s, background 0.2s",
+              backdropFilter: "blur(4px)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
+              e.currentTarget.style.background = "rgba(255,255,255,0.14)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+              e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+            }}
           >
             {h.cta2}
           </a>
@@ -163,11 +178,21 @@ export default function Hero() {
                 alignItems: "center",
                 padding: "1rem",
                 borderRadius: "0.75rem",
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                backdropFilter: "blur(8px)",
               }}
             >
-              <span className="gradient-text" style={{ fontSize: "1.75rem", fontWeight: 700 }}>
+              <span
+                style={{
+                  fontSize: "1.75rem",
+                  fontWeight: 700,
+                  background: "linear-gradient(135deg, #FFFFFF, #93C5FD)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 {s.value}
               </span>
               <span
@@ -176,7 +201,7 @@ export default function Hero() {
                   marginTop: "0.25rem",
                   textAlign: "center",
                   lineHeight: 1.4,
-                  color: "var(--text-muted)",
+                  color: "rgba(255,255,255,0.6)",
                 }}
               >
                 {s.label}
@@ -193,7 +218,7 @@ export default function Hero() {
           bottom: "2rem",
           left: "50%",
           transform: "translateX(-50%)",
-          color: "var(--text-muted)",
+          color: "rgba(255,255,255,0.4)",
         }}
       >
         <ChevronDown size={24} />

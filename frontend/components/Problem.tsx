@@ -24,9 +24,9 @@ export default function Problem() {
               padding: "0.4rem 1rem",
               borderRadius: "9999px",
               marginBottom: "1.5rem",
-              border: "1px solid var(--border)",
-              color: "var(--accent-cyan)",
-              background: "var(--accent-cyan-dim)",
+              border: "1px solid rgba(30,58,138,0.2)",
+              color: "var(--accent-blue)",
+              background: "var(--accent-blue-dim)",
             }}
           >
             {p.tag}
@@ -39,7 +39,7 @@ export default function Problem() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: "1.5rem" }}>
           {p.cards.map((card) => {
             const Icon = iconMap[card.icon as IconKey];
             return (
@@ -50,11 +50,18 @@ export default function Problem() {
                   border: "1px solid var(--border)",
                   borderRadius: "1rem",
                   padding: "1.75rem",
-                  transition: "border-color 0.2s",
+                  transition: "border-color 0.2s, box-shadow 0.2s",
                   cursor: "default",
+                  boxShadow: "var(--shadow-card)",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(30,58,138,0.35)";
+                  e.currentTarget.style.boxShadow = "var(--shadow-card-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border)";
+                  e.currentTarget.style.boxShadow = "var(--shadow-card)";
+                }}
               >
                 <div style={{ width: "3rem", height: "3rem", borderRadius: "0.75rem", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--accent-blue-dim)", marginBottom: "1rem" }}>
                   {Icon && <Icon size={22} style={{ color: "var(--accent-blue)" }} />}

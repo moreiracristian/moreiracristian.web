@@ -10,10 +10,10 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" style={{ background: "var(--bg-primary)", width: "100%", padding: "6rem 0" }}>
+    <section id="faq" style={{ background: "var(--bg-surface)", width: "100%", padding: "6rem 0" }}>
       <div className="section-inner">
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid var(--border)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
+          <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.4rem 1rem", borderRadius: "9999px", marginBottom: "1.5rem", border: "1px solid rgba(30,58,138,0.2)", color: "var(--accent-blue)", background: "var(--accent-blue-dim)" }}>
             {f.tag}
           </span>
           <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: "1rem", color: "var(--text-primary)" }}>
@@ -28,7 +28,14 @@ export default function FAQ() {
           {f.items.map((item, i) => (
             <div
               key={i}
-              style={{ background: "var(--bg-card)", border: `1px solid ${open === i ? "rgba(59,130,246,0.4)" : "var(--border)"}`, borderRadius: "0.875rem", overflow: "hidden", transition: "border-color 0.2s" }}
+              style={{
+                background: "var(--bg-card)",
+                border: `1px solid ${open === i ? "rgba(30,58,138,0.35)" : "var(--border)"}`,
+                borderRadius: "0.875rem",
+                overflow: "hidden",
+                transition: "border-color 0.2s, box-shadow 0.2s",
+                boxShadow: open === i ? "var(--shadow-card-hover)" : "var(--shadow-card)",
+              }}
             >
               <button
                 type="button"

@@ -12,8 +12,8 @@ const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 const inputStyle: React.CSSProperties = {
-  background: "var(--bg-card)",
-  border: "1px solid var(--border)",
+  background: "#F8FAFC",
+  border: "1px solid rgba(156,163,175,0.4)",
   color: "var(--text-primary)",
   borderRadius: "10px",
   padding: "12px 16px",
@@ -21,7 +21,7 @@ const inputStyle: React.CSSProperties = {
   fontSize: "14px",
   outline: "none",
   boxSizing: "border-box",
-  transition: "border-color 0.2s",
+  transition: "border-color 0.2s, box-shadow 0.2s",
 };
 
 export default function Contact() {
@@ -68,7 +68,7 @@ export default function Contact() {
               padding: "0.4rem 1rem",
               borderRadius: "9999px",
               marginBottom: "1.5rem",
-              border: "1px solid var(--border)",
+              border: "1px solid rgba(30,58,138,0.2)",
               color: "var(--accent-blue)",
               background: "var(--accent-blue-dim)",
             }}
@@ -87,7 +87,7 @@ export default function Contact() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
             gap: "3rem",
             alignItems: "stretch",
           }}
@@ -102,8 +102,14 @@ export default function Contact() {
                 placeholder={c.form.name}
                 required
                 style={inputStyle}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "var(--accent-blue)";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(30,58,138,0.08)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(156,163,175,0.4)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
               />
               <input
                 name="email"
@@ -113,8 +119,14 @@ export default function Contact() {
                 placeholder={c.form.email}
                 required
                 style={inputStyle}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "var(--accent-blue)";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(30,58,138,0.08)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(156,163,175,0.4)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
               />
             </div>
             <input
@@ -123,8 +135,14 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={c.form.company}
               style={inputStyle}
-              onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-              onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent-blue)";
+                e.currentTarget.style.boxShadow = "0 0 0 3px rgba(30,58,138,0.08)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "rgba(156,163,175,0.4)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             />
             <textarea
               name="message"
@@ -133,18 +151,24 @@ export default function Contact() {
               placeholder={c.form.message}
               required
               rows={5}
-              style={{ ...inputStyle, resize: "vertical", flexGrow: 1, minHeight: "8rem" }}
-              onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-blue)")}
-              onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+              style={{ ...inputStyle, resize: "vertical", flexGrow: 1, minHeight: "clamp(5rem, 15vw, 8rem)" }}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent-blue)";
+                e.currentTarget.style.boxShadow = "0 0 0 3px rgba(30,58,138,0.08)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "rgba(156,163,175,0.4)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             />
 
             {status === "success" && (
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1rem", borderRadius: "0.5rem", fontSize: "0.875rem", background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", color: "#4ade80" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1rem", borderRadius: "0.5rem", fontSize: "0.875rem", background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.25)", color: "#16a34a" }}>
                 <CheckCircle size={16} /> {c.form.success}
               </div>
             )}
             {status === "error" && (
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1rem", borderRadius: "0.5rem", fontSize: "0.875rem", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#f87171" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1rem", borderRadius: "0.5rem", fontSize: "0.875rem", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)", color: "#dc2626" }}>
                 <AlertCircle size={16} /> {c.form.error}
               </div>
             )}
@@ -161,12 +185,15 @@ export default function Contact() {
                 padding: "1rem 2rem",
                 borderRadius: "0.75rem",
                 border: "none",
-                background: status === "sending" ? "var(--bg-card)" : "linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))",
+                background: status === "sending" ? "var(--bg-surface)" : "var(--accent-blue)",
                 color: status === "sending" ? "var(--text-muted)" : "white",
                 cursor: status === "sending" ? "not-allowed" : "pointer",
                 fontSize: "0.95rem",
-                transition: "opacity 0.2s",
+                transition: "opacity 0.2s, box-shadow 0.2s",
+                boxShadow: status === "sending" ? "none" : "0 2px 8px rgba(30,58,138,0.3)",
               }}
+              onMouseEnter={(e) => { if (status !== "sending") e.currentTarget.style.opacity = "0.9"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
             >
               <Send size={16} />
               {status === "sending" ? c.form.sending : c.form.send}
@@ -191,15 +218,22 @@ export default function Contact() {
                   gap: "1rem",
                   padding: "1rem",
                   borderRadius: "0.75rem",
-                  background: "var(--bg-card)",
+                  background: "var(--bg-surface)",
                   border: "1px solid var(--border)",
                   color: "var(--text-primary)",
                   textDecoration: "none",
-                  transition: "border-color 0.2s",
+                  transition: "border-color 0.2s, box-shadow 0.2s",
                   overflow: "hidden",
+                  boxShadow: "var(--shadow-card)",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = item.color)}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = item.color;
+                  e.currentTarget.style.boxShadow = "var(--shadow-card-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border)";
+                  e.currentTarget.style.boxShadow = "var(--shadow-card)";
+                }}
               >
                 <div
                   style={{
@@ -210,7 +244,7 @@ export default function Contact() {
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
-                    background: `${item.color}20`,
+                    background: `${item.color}18`,
                   }}
                 >
                   <item.icon size={18} style={{ color: item.color }} />
@@ -230,7 +264,7 @@ export default function Contact() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.75rem",
-                background: "rgba(34,197,94,0.08)",
+                background: "rgba(34,197,94,0.06)",
                 border: "1px solid rgba(34,197,94,0.2)",
               }}
             >
@@ -239,12 +273,12 @@ export default function Contact() {
                   width: "0.625rem",
                   height: "0.625rem",
                   borderRadius: "9999px",
-                  background: "#4ade80",
+                  background: "#16a34a",
                   flexShrink: 0,
                   animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 }}
               />
-              <span style={{ fontSize: "0.75rem", color: "#4ade80" }}>
+              <span style={{ fontSize: "0.75rem", color: "#16a34a", fontWeight: 500 }}>
                 Disponible para nuevos proyectos
               </span>
             </div>
