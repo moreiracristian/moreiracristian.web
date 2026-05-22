@@ -20,7 +20,7 @@ export default function Hero() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "0 1.5rem",
+        padding: "5rem 1.5rem 4rem",
         overflow: "hidden",
         background: "linear-gradient(160deg, #0A1628 0%, #1E3A8A 55%, #1D4ED8 100%)",
       }}
@@ -172,6 +172,7 @@ export default function Hero() {
           {[h.stat1, h.stat2, h.stat3].map((s) => (
             <div
               key={s.label}
+              className="stat-card"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -184,6 +185,7 @@ export default function Hero() {
               }}
             >
               <span
+                className="stat-value"
                 style={{
                   fontSize: "1.75rem",
                   fontWeight: 700,

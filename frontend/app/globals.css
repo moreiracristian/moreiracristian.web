@@ -171,6 +171,23 @@ section + section {
   }
 }
 
+/* Cards more compact on mobile */
+@media (max-width: 640px) {
+  .site-card {
+    padding: 1rem !important;
+  }
+
+  /* HowIWork: force single-column stack on mobile */
+  .how-i-work-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Values 2x2 sub-grid: keep 2 columns but smaller */
+  .how-i-work-values {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
 /* Small phones */
 @media (max-width: 480px) {
   .section-inner {
@@ -179,8 +196,17 @@ section + section {
   }
 
   .grid-stats {
-    grid-template-columns: 1fr;
-    max-width: 20rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+
+  .stat-card {
+    padding: 0.6rem 0.4rem !important;
+  }
+
+  .stat-value {
+    font-size: 1.25rem !important;
   }
 
   #problema, #clientes, #servicios, #como-trabajo,

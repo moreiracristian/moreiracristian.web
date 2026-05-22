@@ -26,6 +26,7 @@ export default function Projects() {
           {p.items.map((item) => (
             <div
               key={item.title}
+              className="site-card"
               style={{ display: "flex", flexDirection: "column", padding: "1.75rem", borderRadius: "1rem", background: "var(--bg-card)", border: "1px solid var(--border)", transition: "border-color 0.2s, box-shadow 0.2s", boxShadow: "var(--shadow-card)" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = "rgba(30,58,138,0.35)";

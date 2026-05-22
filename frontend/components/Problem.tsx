@@ -45,6 +45,7 @@ export default function Problem() {
             return (
               <div
                 key={card.title}
+                className="site-card"
                 style={{
                   background: "var(--bg-card)",
                   border: "1px solid var(--border)",

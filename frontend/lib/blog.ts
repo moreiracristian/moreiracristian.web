@@ -16,6 +16,166 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "ventas-crecen-rentabilidad-no",
+    date: "2026-05-20",
+    readTime: 6,
+    tags: ["Rentabilidad", "Márgenes", "Retail"],
+    title: {
+      es: "Por qué tus ventas crecen pero tu rentabilidad no",
+      en: "Why your sales grow but your profitability doesn't",
+    },
+    excerpt: {
+      es: "Vender más no siempre significa ganar más. Si tu facturación sube pero el margen se achica, el problema está en los datos que todavía no estás mirando.",
+      en: "Selling more doesn't always mean earning more. If your revenue grows but margins shrink, the problem lies in data you're not yet looking at.",
+    },
+    content: {
+      es: [
+        {
+          type: "paragraph",
+          text: "Es uno de los escenarios más frustrantes en un negocio: el volumen de ventas sube mes a mes, el equipo trabaja más, el depósito está activo, pero a fin de mes la caja no refleja ese crecimiento. ¿Dónde se va la plata?",
+        },
+        {
+          type: "paragraph",
+          text: "La respuesta casi siempre está en la misma dirección: se están vendiendo más unidades, pero con menor margen. Y eso no se ve en el ticket promedio ni en el reporte de ventas estándar.",
+        },
+        {
+          type: "heading",
+          text: "El problema del mix de ventas",
+        },
+        {
+          type: "paragraph",
+          text: "No todos los productos aportan igual. Si en los últimos meses creciste impulsado por los productos de menor margen —porque son los que más se piden, los que tenés en oferta, o los que el equipo comercial prioriza— tu rentabilidad baja aunque el número total suba.",
+        },
+        {
+          type: "paragraph",
+          text: "Esto se llama degradación del mix, y es silenciosa: el sistema de ventas no la alerta porque el total facturado sigue creciendo.",
+        },
+        {
+          type: "quote",
+          text: "Crecer en volumen vendiendo lo que menos deja es una trampa. Cuanto más vendés, más perdés en términos relativos.",
+        },
+        {
+          type: "heading",
+          text: "Cómo detectarlo con datos",
+        },
+        {
+          type: "list",
+          items: [
+            "Calculá el margen bruto por producto o categoría, no solo el total de la empresa.",
+            "Comparalo entre períodos: ¿el margen de la categoría A era 38% hace 3 meses y ahora es 31%? Ahí está el problema.",
+            "Cruzá margen con volumen vendido: si los productos de menor margen ganaron participación, encontraste la causa.",
+            "Revisá también el impacto de descuentos no controlados: muchas veces el equipo comercial hace descuentos sin ver el efecto en el margen.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "El efecto de los costos variables ocultos",
+        },
+        {
+          type: "paragraph",
+          text: "Otro factor frecuente: los costos que crecen con el volumen pero que no siempre se asignan bien. Comisiones de venta, costos de logística, merma, embalaje diferencial por canal. Si vendés más pero esos costos crecen más rápido que la facturación, el margen se comprime aunque el precio de venta no haya cambiado.",
+        },
+        {
+          type: "paragraph",
+          text: "El análisis de contribución marginal por producto o canal es la herramienta para verlo: cuánto aporta realmente cada unidad vendida después de restar todos sus costos variables directos.",
+        },
+        {
+          type: "heading",
+          text: "Qué revisar primero",
+        },
+        {
+          type: "list",
+          items: [
+            "Margen bruto por categoría en los últimos 3 meses: ¿subió o bajó?",
+            "Participación de cada categoría en la facturación total: ¿cambió el mix?",
+            "Descuentos aplicados por canal o vendedor: ¿hay un canal que sistematicamente opera con descuento?",
+            "Costos variables asignados por producto: ¿están todos incluidos en el cálculo de margen?",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Con estos cuatro puntos claros, podés identificar en menos de una hora dónde está la pérdida de rentabilidad. Y a partir de ahí, tomar decisiones concretas: ajustar precios, cambiar el foco comercial, revisar descuentos, o replantear el mix.",
+        },
+        {
+          type: "paragraph",
+          text: "Si querés que hagamos juntos ese análisis para tu negocio, escribime. El diagnóstico inicial es sin costo y en la primera charla ya tenemos claridad sobre dónde mirar.",
+        },
+      ],
+      en: [
+        {
+          type: "paragraph",
+          text: "It's one of the most frustrating scenarios in a business: sales volume grows month after month, the team works harder, the warehouse is busy, but at the end of the month the cash doesn't reflect that growth. Where does the money go?",
+        },
+        {
+          type: "paragraph",
+          text: "The answer almost always points in the same direction: more units are being sold, but with lower margins. And that doesn't show up in the average ticket or the standard sales report.",
+        },
+        {
+          type: "heading",
+          text: "The sales mix problem",
+        },
+        {
+          type: "paragraph",
+          text: "Not all products contribute equally. If in recent months your growth was driven by lower-margin products — because they're the most requested, on promotion, or the ones your sales team prioritizes — your profitability drops even as the total number rises.",
+        },
+        {
+          type: "paragraph",
+          text: "This is called mix degradation, and it's silent: your sales system doesn't alert you because total revenue keeps growing.",
+        },
+        {
+          type: "quote",
+          text: "Growing in volume by selling what yields the least is a trap. The more you sell, the more you lose in relative terms.",
+        },
+        {
+          type: "heading",
+          text: "How to detect it with data",
+        },
+        {
+          type: "list",
+          items: [
+            "Calculate gross margin per product or category, not just the company total.",
+            "Compare across periods: was the margin in category A 38% three months ago and now it's 31%? There's the problem.",
+            "Cross margin with units sold: if lower-margin products gained share, you've found the cause.",
+            "Also review the impact of uncontrolled discounts: the sales team often discounts without seeing the margin effect.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "The effect of hidden variable costs",
+        },
+        {
+          type: "paragraph",
+          text: "Another frequent factor: costs that grow with volume but aren't always properly assigned. Sales commissions, logistics costs, shrinkage, differential packaging by channel. If you sell more but those costs grow faster than revenue, margins compress even if the selling price hasn't changed.",
+        },
+        {
+          type: "paragraph",
+          text: "Contribution margin analysis by product or channel is the tool to see it: how much does each unit actually contribute after subtracting all its direct variable costs.",
+        },
+        {
+          type: "heading",
+          text: "What to review first",
+        },
+        {
+          type: "list",
+          items: [
+            "Gross margin by category over the past 3 months: did it go up or down?",
+            "Each category's share of total revenue: did the mix change?",
+            "Discounts applied by channel or salesperson: is there a channel that systematically operates with discounts?",
+            "Variable costs assigned per product: are they all included in the margin calculation?",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "With these four points clear, you can identify in under an hour where the profitability loss is happening. From there, you make concrete decisions: adjust prices, shift commercial focus, review discounts, or rethink the mix.",
+        },
+        {
+          type: "paragraph",
+          text: "If you'd like to do that analysis together for your business, reach out. The initial diagnosis is free and in the first conversation we'll already have clarity on where to look.",
+        },
+      ],
+    },
+  },
+  {
     slug: "inventario-muerto-como-detectarlo",
     date: "2026-05-12",
     readTime: 6,

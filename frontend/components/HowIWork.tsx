@@ -25,7 +25,7 @@ export default function HowIWork() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "clamp(2rem, 5vw, 4rem)", alignItems: "start" }}>
+        <div className="how-i-work-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "clamp(2rem, 5vw, 4rem)", alignItems: "start" }}>
           {/* Steps */}
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             {h.steps.map((step, i) => (
@@ -51,11 +51,11 @@ export default function HowIWork() {
           </div>
 
           {/* Values */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+          <div className="how-i-work-values" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
             {h.values.map((v) => {
               const Icon = iconMap[v.icon as IconKey];
               return (
-                <div key={v.label} style={{ padding: "1.5rem", borderRadius: "1rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "0.75rem", background: "var(--bg-card)", border: "1px solid var(--border)", boxShadow: "var(--shadow-card)" }}>
+                <div key={v.label} className="site-card" style={{ padding: "1.5rem", borderRadius: "1rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "0.75rem", background: "var(--bg-card)", border: "1px solid var(--border)", boxShadow: "var(--shadow-card)" }}>
                   <div style={{ width: "3rem", height: "3rem", borderRadius: "9999px", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--accent-blue-dim)" }}>
                     {Icon && <Icon size={22} style={{ color: "var(--accent-blue)" }} />}
                   </div>

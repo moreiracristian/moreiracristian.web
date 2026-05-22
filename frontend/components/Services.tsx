@@ -31,6 +31,7 @@ export default function Services() {
             return (
               <div
                 key={item.title}
+                className="site-card"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.75rem", transition: "border-color 0.2s, transform 0.2s, box-shadow 0.2s", display: "flex", flexDirection: "column", boxShadow: "var(--shadow-card)" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(30,58,138,0.35)";
