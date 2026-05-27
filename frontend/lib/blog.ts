@@ -16,6 +16,162 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "cuando-un-modelo-predictivo-tiene-sentido",
+    date: "2026-05-27",
+    readTime: 7,
+    tags: ["Automatización", "Machine Learning", "Proyectos de Datos"],
+    title: {
+      es: "¿Cuándo tiene sentido un modelo predictivo para tu empresa?",
+      en: "When does a predictive model actually make sense for your business?",
+    },
+    excerpt: {
+      es: "No toda empresa necesita Machine Learning. Pero hay señales concretas que indican cuándo un modelo predictivo deja de ser un lujo técnico y se convierte en una decisión de negocio.",
+      en: "Not every company needs Machine Learning. But there are concrete signals that show when a predictive model stops being a technical luxury and becomes a business decision.",
+    },
+    content: {
+      es: [
+        {
+          type: "paragraph",
+          text: "Hay una confusión frecuente en el mundo de los datos: se asocia Machine Learning con empresas tecnológicas grandes, con equipos de decenas de científicos de datos y presupuestos enormes. Pero la realidad es otra. Muchas empresas medianas —distribuidoras, retailers, servicios— ya tienen todo lo que necesitan para que un modelo predictivo les genere valor real. Lo que les falta no es tecnología: es saber cuándo tiene sentido dar ese paso.",
+        },
+        {
+          type: "heading",
+          text: "Primero: ¿qué es un modelo predictivo en términos simples?",
+        },
+        {
+          type: "paragraph",
+          text: "Un modelo predictivo es un sistema que aprende de tu historial de datos para anticipar lo que va a pasar. No adivina: calcula probabilidades basadas en patrones que ya existían en tu negocio pero que ningún reporte te mostraba. Puede predecir qué productos van a tener quiebre de stock la próxima semana, qué clientes tienen más chances de no renovar un contrato, o cuándo una máquina va a necesitar mantenimiento.",
+        },
+        {
+          type: "quote",
+          text: "La pregunta no es si tu empresa puede tener Machine Learning. La pregunta es si tiene el problema correcto para que valga la pena.",
+        },
+        {
+          type: "heading",
+          text: "Las 3 señales de que ya estás listo",
+        },
+        {
+          type: "list",
+          items: [
+            "Tomás decisiones repetitivas con los mismos criterios: si cada semana hacés el mismo análisis para decidir qué comprar, a qué precio vender o a qué clientes llamar, ese proceso se puede modelar y automatizar.",
+            "Tenés historial de datos acumulado: un modelo necesita aprender de algo. Si tenés al menos 12 a 18 meses de ventas, compras o comportamiento de clientes registrados, hay suficiente material para empezar.",
+            "El costo del error es significativo: un quiebre de stock que cuesta ventas, una compra de más que inmoviliza capital, un cliente perdido por falta de seguimiento. Cuanto más caro sea equivocarse, más sentido tiene predecir.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "Las 3 señales de que todavía no es el momento",
+        },
+        {
+          type: "list",
+          items: [
+            "Los datos básicos todavía no están ordenados: si no sabés exactamente cuánto vendiste el mes pasado por categoría, un modelo predictivo va a amplificar ese desorden, no resolverlo.",
+            "No hay un proceso de decisión claro detrás: si el modelo predice algo pero nadie sabe qué hacer con esa información, el proyecto muere en el intento.",
+            "Se busca el modelo como solución mágica: el Machine Learning no reemplaza el conocimiento del negocio. Es una herramienta que potencia decisiones que ya tienen lógica detrás.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "Un ejemplo concreto: predicción de demanda",
+        },
+        {
+          type: "paragraph",
+          text: "Una distribuidora con 800 SKUs activos gasta horas cada semana decidiendo qué reponer. El criterio es la experiencia del comprador más el stock actual. Funciona, pero falla cuando cambian las condiciones: temporada, un proveedor que entrega tarde, o un producto que de repente se pide más.",
+        },
+        {
+          type: "paragraph",
+          text: "Un modelo de predicción de demanda entrenado con 2 años de ventas, estacionalidad y tiempos de entrega del proveedor puede reducir ese tiempo de decisión de horas a minutos, y bajar los quiebres de stock entre un 20% y un 40%. No porque sea mágico — sino porque analiza más variables de las que cualquier persona puede procesar a la vez.",
+        },
+        {
+          type: "heading",
+          text: "Por dónde empezar sin gastar de más",
+        },
+        {
+          type: "paragraph",
+          text: "El error más común es invertir en tecnología antes de validar el problema. El camino correcto es al revés: primero definir claramente qué decisión querés mejorar, luego verificar que los datos existen y están disponibles, y recién ahí evaluar qué tan complejo necesita ser el modelo.",
+        },
+        {
+          type: "paragraph",
+          text: "Muchos problemas que parecen requerir Machine Learning se resuelven con un buen análisis estadístico y un pipeline de datos bien armado. Y los que sí requieren un modelo, generalmente empiezan con una versión simple que ya genera valor antes de volverse sofisticados.",
+        },
+        {
+          type: "paragraph",
+          text: "Si creés que tu empresa tiene un problema de este tipo, escribime. En la primera conversación podemos evaluar juntos si tiene sentido encararlo y cuál sería el camino más directo.",
+        },
+      ],
+      en: [
+        {
+          type: "paragraph",
+          text: "There's a common misconception in the data world: Machine Learning gets associated with large tech companies, teams of dozens of data scientists, and enormous budgets. But the reality is different. Many mid-sized companies — distributors, retailers, service businesses — already have everything they need for a predictive model to generate real value. What they're missing isn't technology: it's knowing when it makes sense to take that step.",
+        },
+        {
+          type: "heading",
+          text: "First: what is a predictive model in plain terms?",
+        },
+        {
+          type: "paragraph",
+          text: "A predictive model is a system that learns from your data history to anticipate what's going to happen. It doesn't guess: it calculates probabilities based on patterns that already existed in your business but that no report was showing you. It can predict which products will have stockouts next week, which customers are most likely not to renew a contract, or when a machine will need maintenance.",
+        },
+        {
+          type: "quote",
+          text: "The question isn't whether your company can have Machine Learning. The question is whether it has the right problem to make it worthwhile.",
+        },
+        {
+          type: "heading",
+          text: "The 3 signs you're already ready",
+        },
+        {
+          type: "list",
+          items: [
+            "You make repetitive decisions using the same criteria: if every week you do the same analysis to decide what to buy, at what price to sell, or which customers to call, that process can be modeled and automated.",
+            "You have accumulated historical data: a model needs something to learn from. If you have at least 12 to 18 months of sales, purchasing, or customer behavior recorded, there's enough material to start.",
+            "The cost of being wrong is significant: a stockout that costs sales, an overstock that ties up capital, a lost customer due to lack of follow-up. The more expensive the mistake, the more sense it makes to predict.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "The 3 signs it's not the right time yet",
+        },
+        {
+          type: "list",
+          items: [
+            "Basic data isn't organized yet: if you don't know exactly how much you sold last month by category, a predictive model will amplify that disorder, not solve it.",
+            "There's no clear decision process behind it: if the model predicts something but nobody knows what to do with that information, the project dies in the attempt.",
+            "You're looking for the model as a magic solution: Machine Learning doesn't replace business knowledge. It's a tool that amplifies decisions that already have logic behind them.",
+          ],
+        },
+        {
+          type: "heading",
+          text: "A concrete example: demand forecasting",
+        },
+        {
+          type: "paragraph",
+          text: "A distributor with 800 active SKUs spends hours every week deciding what to reorder. The criteria is the buyer's experience plus current stock levels. It works, but fails when conditions change: seasonality, a supplier who delivers late, or a product that suddenly gets more demand.",
+        },
+        {
+          type: "paragraph",
+          text: "A demand forecasting model trained on 2 years of sales, seasonality, and supplier lead times can reduce that decision time from hours to minutes, and cut stockouts by 20% to 40%. Not because it's magic — but because it analyzes more variables than any person can process at once.",
+        },
+        {
+          type: "heading",
+          text: "Where to start without overspending",
+        },
+        {
+          type: "paragraph",
+          text: "The most common mistake is investing in technology before validating the problem. The right path is the reverse: first clearly define which decision you want to improve, then verify that the data exists and is available, and only then evaluate how complex the model needs to be.",
+        },
+        {
+          type: "paragraph",
+          text: "Many problems that seem to require Machine Learning are solved with solid statistical analysis and a well-built data pipeline. And those that do require a model usually start with a simple version that already generates value before becoming sophisticated.",
+        },
+        {
+          type: "paragraph",
+          text: "If you think your company has a problem like this, reach out. In the first conversation we can evaluate together whether it makes sense to tackle it and what the most direct path would be.",
+        },
+      ],
+    },
+  },
+  {
     slug: "ventas-crecen-rentabilidad-no",
     date: "2026-05-20",
     readTime: 6,

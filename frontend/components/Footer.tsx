@@ -21,10 +21,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const links = [
-    { label: f.links.services, href: "#servicios" },
-    { label: f.links.howIWork, href: "#como-trabajo" },
-    { label: f.links.projects, href: "#proyectos" },
-    { label: f.links.contact, href: "#contacto" },
+    { label: f.links.services, href: "/#servicios" },
+    { label: f.links.howIWork, href: "/#como-trabajo" },
+    { label: f.links.projects, href: "/#proyectos" },
+    { label: f.links.contact, href: "/#contacto" },
   ];
 
   const socials = [

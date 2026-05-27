@@ -7,6 +7,7 @@ import HowIWork from "@/components/HowIWork";
 import Projects from "@/components/Projects";
 import BlogTeaser from "@/components/BlogTeaser";
 import About from "@/components/About";
+import TechExpertise from "@/components/TechExpertise";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
@@ -25,6 +26,7 @@ export default function Home() {
         <Projects />
         <BlogTeaser />
         <About />
+        <TechExpertise />
         <FAQ />
         <Contact />
         <Newsletter />

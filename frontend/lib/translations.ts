@@ -275,12 +275,70 @@ export const t = {
           a: "Sí, totalmente. Firmamos un acuerdo de confidencialidad antes de compartir cualquier archivo. Nunca comparto ni uso tus datos para ningún otro propósito. Tu información es tuya.",
         },
         {
+          q: "¿Qué diferencia hay entre los servicios habituales y los proyectos más complejos?",
+          a: "Los servicios habituales resuelven problemas de visibilidad: dashboards, análisis de márgenes, automatización de reportes. Ves mejor lo que ya tenés. Los proyectos más complejos van un paso más allá: automatización de procesos completos, modelos que predicen comportamiento futuro, o infraestructura para manejar grandes volúmenes de datos. La diferencia no es de herramienta — es de profundidad y alcance del problema a resolver.",
+        },
+        {
+          q: "¿Qué tipo de empresa es candidata para un proyecto más complejo?",
+          a: "Empresas que ya tienen datos históricos acumulados, un volumen de operaciones significativo, y preguntas concretas que un dashboard estándar no puede responder. No hace falta tener un equipo de IT propio: hace falta tener el problema claro y los datos disponibles. En la primera charla evaluamos juntos si tiene sentido encararlo.",
+        },
+        {
           q: "¿Qué pasa si no sé bien qué necesito?",
           a: "Eso es exactamente para lo que sirve la primera conversación. Contame cómo tomás decisiones hoy, qué información te falta y qué problema te quita el sueño. A partir de eso definimos juntos qué tiene sentido analizar.",
         },
         {
           q: "¿Con qué tamaño de empresa trabajás?",
-          a: "Principalmente con PyMEs: desde comercios pequeños con 2-3 empleados hasta empresas medianas con equipos de 50 o más personas. No hago consultoría para grandes corporaciones — ese no es mi foco.",
+          a: "Con empresas de distintos tamaños y necesidades. Desde PyMEs que recién empiezan a organizar sus datos, hasta empresas medianas con operaciones más complejas que necesitan automatización, modelos predictivos o infraestructura de datos a escala. El tamaño no define si puedo ayudarte — lo define el tipo de problema que tenés.",
+        },
+      ],
+    },
+    techExpertise: {
+      tag: "Para proyectos más complejos",
+      title: "Cuando el negocio pide más que un reporte",
+      subtitle: "Para empresas con más datos, más sistemas o más preguntas sin respuesta. Mismo compromiso, mayor profundidad.",
+      cta: "Hablemos de tu proyecto",
+      tracks: [
+        {
+          num: "01",
+          icon: "Code2",
+          title: "Automatización con Python",
+          desc: "Procesos que hoy hace una persona a mano, convertidos en automáticos. Desde limpiar datos hasta generar reportes sin intervención.",
+          modules: ["Python", "Pandas", "NumPy", "Scripts a medida", "Automatización de procesos"],
+        },
+        {
+          num: "02",
+          icon: "BarChart3",
+          title: "Análisis estadístico aplicado",
+          desc: "Decisiones respaldadas por probabilidad real, no solo promedios. Detectamos patrones que los reportes habituales no muestran.",
+          modules: ["Estadística descriptiva", "Distribuciones", "Probabilidad", "KPIs avanzados", "SQL"],
+        },
+        {
+          num: "03",
+          icon: "Database",
+          title: "Datos limpios y confiables",
+          desc: "Tu base de datos ordenada, sin duplicados ni inconsistencias. Para que todos los sistemas de tu empresa hablen el mismo idioma.",
+          modules: ["SQL avanzado", "ETL", "Calidad del dato", "Integración de fuentes", "Optimización"],
+        },
+        {
+          num: "04",
+          icon: "Server",
+          title: "Proyectos de gran volumen",
+          desc: "Cuando los datos superan lo que Excel puede manejar. Pipelines robustos para procesar millones de registros sin perder nada en el camino.",
+          modules: ["Big Data", "Apache Spark", "NoSQL", "Pipelines de datos", "Procesamiento distribuido"],
+        },
+        {
+          num: "05",
+          icon: "LineChart",
+          title: "Reportes y dashboards avanzados",
+          desc: "Más allá del gráfico básico: tableros interactivos, métricas personalizadas y visualizaciones que facilitan decisiones en tiempo real.",
+          modules: ["Power BI", "Tableau", "DAX avanzado", "Power Query", "Matplotlib / Seaborn"],
+        },
+        {
+          num: "06",
+          icon: "Brain",
+          title: "Modelos predictivos",
+          desc: "Tu negocio anticipa en lugar de reaccionar. Modelos que predicen demanda, detectan problemas o clasifican clientes antes de que ocurran.",
+          modules: ["Predicción de demanda", "Clasificación", "Series de tiempo", "Detección de anomalías", "NLP"],
         },
       ],
     },
@@ -295,7 +353,7 @@ export const t = {
       allArticles: "Ver todos los artículos",
     },
     footer: {
-      tagline: "Analista de Datos · Business Intelligence · Pricing & Retail Analytics",
+      tagline: "Analista de Datos · Business Intelligence · Data Scientist · Data Engineer",
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Servicios",
@@ -578,12 +636,70 @@ export const t = {
           a: "Yes, completely. We sign a confidentiality agreement before sharing any files. I never share or use your data for any other purpose. Your information is yours.",
         },
         {
+          q: "What's the difference between standard services and more complex projects?",
+          a: "Standard services solve visibility problems: dashboards, margin analysis, report automation — you see what you already have, more clearly. More complex projects go a step further: full process automation, models that predict future behavior, or infrastructure to handle large data volumes. The difference isn't the tool — it's the depth and scope of the problem being solved.",
+        },
+        {
+          q: "What kind of company is a good candidate for a more complex project?",
+          a: "Companies that already have accumulated historical data, a significant volume of operations, and specific questions that a standard dashboard can't answer. You don't need your own IT team — you need a clear problem and available data. In the first conversation we'll evaluate together whether it makes sense to take it on.",
+        },
+        {
           q: "What if I don't know exactly what I need?",
           a: "That's exactly what the first conversation is for. Tell me how you make decisions today, what information you're missing, and what problem keeps you up at night. From there we define together what makes sense to analyze.",
         },
         {
           q: "What size companies do you work with?",
-          a: "Primarily SMEs: from small shops with 2-3 employees to mid-sized companies with teams of 50 or more. We don't do consulting for large corporations — that's not our focus.",
+          a: "Companies of different sizes and needs. From SMEs just starting to organize their data, to mid-sized businesses with more complex operations that need automation, predictive models, or data infrastructure at scale. Size doesn't define whether I can help — the type of problem you have does.",
+        },
+      ],
+    },
+    techExpertise: {
+      tag: "For more complex projects",
+      title: "When the business needs more than a report",
+      subtitle: "For companies with more data, more systems, or more unanswered questions. Same commitment, greater depth.",
+      cta: "Let's talk about your project",
+      tracks: [
+        {
+          num: "01",
+          icon: "Code2",
+          title: "Automation with Python",
+          desc: "Processes that people do manually today, turned into automatic workflows. From cleaning data to generating reports without any manual input.",
+          modules: ["Python", "Pandas", "NumPy", "Custom scripts", "Process automation"],
+        },
+        {
+          num: "02",
+          icon: "BarChart3",
+          title: "Applied statistical analysis",
+          desc: "Decisions backed by real probability, not just averages. We find patterns that standard reports simply don't show.",
+          modules: ["Descriptive statistics", "Distributions", "Probability", "Advanced KPIs", "SQL"],
+        },
+        {
+          num: "03",
+          icon: "Database",
+          title: "Clean and reliable data",
+          desc: "Your database organized, free of duplicates and inconsistencies — so every system in your company speaks the same language.",
+          modules: ["Advanced SQL", "ETL", "Data quality", "Source integration", "Optimization"],
+        },
+        {
+          num: "04",
+          icon: "Server",
+          title: "High-volume projects",
+          desc: "When your data outgrows what Excel can handle. Robust pipelines to process millions of records without losing anything along the way.",
+          modules: ["Big Data", "Apache Spark", "NoSQL", "Data pipelines", "Distributed processing"],
+        },
+        {
+          num: "05",
+          icon: "LineChart",
+          title: "Advanced reports & dashboards",
+          desc: "Beyond the basic chart: interactive boards, custom metrics, and visualizations that make real-time decisions easier.",
+          modules: ["Power BI", "Tableau", "Advanced DAX", "Power Query", "Matplotlib / Seaborn"],
+        },
+        {
+          num: "06",
+          icon: "Brain",
+          title: "Predictive models",
+          desc: "Your business anticipates instead of reacting. Models that forecast demand, spot problems, or classify customers before things happen.",
+          modules: ["Demand forecasting", "Classification", "Time series", "Anomaly detection", "NLP"],
         },
       ],
     },
@@ -598,7 +714,7 @@ export const t = {
       allArticles: "View all articles",
     },
     footer: {
-      tagline: "Data Analyst · Business Intelligence · Pricing & Retail Analytics",
+      tagline: "Data Analyst · Business Intelligence · Data Scientist · Data Engineer",
       location: "Resistencia, Chaco, Argentina",
       links: {
         services: "Services",
