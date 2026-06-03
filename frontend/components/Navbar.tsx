@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const { lang, setLang, tr } = useLang();
@@ -69,11 +70,15 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a
-          href={isHome ? "#inicio" : "/"}
-          style={{ fontWeight: 700, fontSize: "1.125rem", letterSpacing: "-0.02em", color: (scrolled || open) ? "var(--text-primary)" : "#FFFFFF", textDecoration: "none", transition: "color 0.3s" }}
-        >
-          CM<span className="gradient-text">.</span>
+        <a href={isHome ? "#inicio" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <Image
+            src={(scrolled || open) ? "/icon-blue.png" : "/icon-light.png"}
+            alt="Cristian Moreira"
+            width={36}
+            height={36}
+            style={{ display: "block" }}
+            priority
+          />
         </a>
 
         {/* Desktop links */}

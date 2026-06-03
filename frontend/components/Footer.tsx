@@ -2,6 +2,7 @@
 
 import { useLang } from "@/contexts/LanguageContext";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const GithubIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -40,9 +41,13 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Brand */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            <p style={{ fontWeight: 700, fontSize: "1.25rem", color: "#FFFFFF", margin: 0 }}>
-              CM<span className="gradient-text">.</span>
-            </p>
+            <Image
+              src="/icon-light.png"
+              alt="Cristian Moreira"
+              width={40}
+              height={40}
+              style={{ display: "block", mixBlendMode: "screen" }}
+            />
             <p style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "rgba(255,255,255,0.55)", margin: 0 }}>
               {f.tagline}
             </p>

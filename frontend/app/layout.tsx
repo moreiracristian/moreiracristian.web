@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Ayudo a PyMEs a tomar mejores decisiones con sus propios datos. Precios, KPIs, dashboards y automatización en lenguaje de negocio.",
   keywords: "analista de datos, business intelligence, PyME, Power BI, Excel avanzado, Argentina",
+  icons: {
+    icon: [
+      { url: "/icon-blue.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon-light.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
   openGraph: {
     title: "Cristian Moreira | Analista de Datos para PyMEs",
     description: "Tus datos ya existen. Solo necesitás que alguien los lea.",
