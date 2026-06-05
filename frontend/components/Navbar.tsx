@@ -51,10 +51,10 @@ export default function Navbar() {
         zIndex: 50,
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
         transition: "transform 0.4s ease, background 0.3s ease, box-shadow 0.3s ease",
-        background: (scrolled || open) ? "rgba(255,255,255,0.97)" : "transparent",
-        backdropFilter: (scrolled || open) ? "blur(12px)" : "none",
-        borderBottom: (scrolled || open) ? "1px solid rgba(156,163,175,0.2)" : "none",
-        boxShadow: (scrolled || open) ? "0 1px 12px rgba(0,0,0,0.06)" : "none",
+        background: (scrolled || open || !isHome) ? "rgba(255,255,255,0.97)" : "transparent",
+        backdropFilter: (scrolled || open || !isHome) ? "blur(12px)" : "none",
+        borderBottom: (scrolled || open || !isHome) ? "1px solid rgba(156,163,175,0.2)" : "none",
+        boxShadow: (scrolled || open || !isHome) ? "0 1px 12px rgba(0,0,0,0.06)" : "none",
       }}
     >
       <div
@@ -72,7 +72,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href={isHome ? "#inicio" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
           <Image
-            src={(scrolled || open) ? "/icon-blue.png" : "/icon-light.png"}
+            src={(scrolled || open || !isHome) ? "/icon-blue.png" : "/icon-light.png"}
             alt="Cristian Moreira"
             width={36}
             height={36}
@@ -81,23 +81,24 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "2rem" }} className="hidden md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              style={{ fontSize: "0.875rem", color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.75)", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = scrolled ? "var(--accent-blue)" : "#FFFFFF")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.75)")}
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
+        {/* Desktop links + right controls grouped on the right */}
+        <div style={{ display: "flex", alignItems: "center", gap: "2.5rem" }} className="hidden md:flex">
+          <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                style={{ fontSize: "0.875rem", color: (scrolled || !isHome) ? "var(--text-muted)" : "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = (scrolled || !isHome) ? "var(--accent-blue)" : "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = (scrolled || !isHome) ? "var(--text-muted)" : "rgba(255,255,255,0.5)")}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
 
-        {/* Right: lang + CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }} className="hidden md:flex">
+          {/* Right: lang + CTA */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <button
             onClick={() => setLang(lang === "es" ? "en" : "es")}
             style={{
@@ -105,14 +106,14 @@ export default function Navbar() {
               fontWeight: 500,
               padding: "0.25rem 0.75rem",
               borderRadius: "9999px",
-              border: scrolled ? "1px solid rgba(156,163,175,0.4)" : "1px solid rgba(255,255,255,0.3)",
-              color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.8)",
-              background: scrolled ? "var(--accent-blue-dim)" : "rgba(255,255,255,0.08)",
+              border: (scrolled || !isHome) ? "1px solid rgba(156,163,175,0.4)" : "1px solid rgba(255,255,255,0.3)",
+              color: (scrolled || !isHome) ? "var(--text-muted)" : "rgba(255,255,255,0.8)",
+              background: (scrolled || !isHome) ? "var(--accent-blue-dim)" : "rgba(255,255,255,0.08)",
               cursor: "pointer",
               transition: "border-color 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = scrolled ? "var(--accent-blue)" : "rgba(255,255,255,0.6)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = scrolled ? "rgba(156,163,175,0.4)" : "rgba(255,255,255,0.3)")}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = (scrolled || !isHome) ? "var(--accent-blue)" : "rgba(255,255,255,0.6)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = (scrolled || !isHome) ? "rgba(156,163,175,0.4)" : "rgba(255,255,255,0.3)")}
           >
             {lang === "es" ? "EN" : "ES"}
           </button>
@@ -123,23 +124,24 @@ export default function Navbar() {
               fontWeight: 600,
               padding: "0.5rem 1.25rem",
               borderRadius: "0.5rem",
-              background: scrolled ? "var(--accent-blue)" : "#FFFFFF",
-              color: scrolled ? "#FFFFFF" : "#1E3A8A",
+              background: (scrolled || !isHome) ? "var(--accent-blue)" : "#FFFFFF",
+              color: (scrolled || !isHome) ? "#FFFFFF" : "#1E3A8A",
               textDecoration: "none",
               transition: "opacity 0.2s, box-shadow 0.2s",
-              boxShadow: scrolled ? "none" : "0 2px 8px rgba(0,0,0,0.15)",
+              boxShadow: (scrolled || !isHome) ? "none" : "0 2px 8px rgba(0,0,0,0.15)",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             {tr.nav.cta}
           </a>
+          </div>
         </div>
 
         {/* Mobile menu button */}
         <button
           className="md:hidden"
-          style={{ color: (scrolled || open) ? "var(--text-primary)" : "#FFFFFF", background: "none", border: "none", cursor: "pointer", padding: "0.25rem" }}
+          style={{ color: (scrolled || open || !isHome) ? "var(--text-primary)" : "#FFFFFF", background: "none", border: "none", cursor: "pointer", padding: "0.25rem" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
