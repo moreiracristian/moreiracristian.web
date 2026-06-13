@@ -33,7 +33,7 @@ export default function Footer() {
   const socials = [
     { href: "https://github.com/moreiracristian", icon: GithubIcon, label: "GitHub" },
     { href: "https://linkedin.com/in/moreiracristian", icon: LinkedinIcon, label: "LinkedIn" },
-    { href: "mailto:moreiracristianmiguel@gmail.com", icon: Mail, label: "Email" },
+    { href: "mailto:moreiracristian@2moreit.com", icon: Mail, label: "Email" },
   ];
 
   return (

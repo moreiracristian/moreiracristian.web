@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Sitio Web <onboarding@resend.dev>",
-      to: "moreiracristianmiguel@gmail.com",
+      to: "moreiracristian@2moreit.com",
       subject: `Nuevo mensaje de ${name}${company ? ` (${company})` : ""}`,
       html: `
         <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:24px;background:#f9fafb;border-radius:8px">

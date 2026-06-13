@@ -49,7 +49,7 @@ export default function Contact() {
 
   const directLinks = [
     { icon: MessageCircle, label: c.direct.whatsapp, href: "https://wa.me/543624024589", color: "#25D366" },
-    { icon: Mail, label: "moreiracristianmiguel@gmail.com", href: "mailto:moreiracristianmiguel@gmail.com", color: "var(--accent-blue)" },
+    { icon: Mail, label: "moreiracristian@2moreit.com", href: "mailto:moreiracristian@2moreit.com", color: "var(--accent-blue)" },
     { icon: LinkedinIcon, label: "linkedin.com/in/moreiracristian", href: "https://linkedin.com/in/moreiracristian", color: "#0A66C2" },
   ];
 
